@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 
-csvfile = open('tasks', 'r')
+csvfile = open('tasks.txt', 'r')
 rows=[]
 i=0
 fieldnames = ("_id", "title", "points", "content", "fileurl")

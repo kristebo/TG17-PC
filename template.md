@@ -1,7 +1,8 @@
 #Hvordan legge til ting
 * lag en oppgave
 * PR
-##Oppgaven skal ha følgende:
+
+###Oppgaven skal ha følgende:
 * test
 * egen linje i tasks
 ##formatet på textfeltet:

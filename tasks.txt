@@ -1,2 +1,3 @@
-1, warmup, 10, sort this list /[01101001 10011010 10101101 11100000/],0
-
+1,warmup,10,sort this list /[01101001 10011010 10101101 11100000/],0
+2,calculate,10,Find all primes in the list. A prime is a is a natural number greater than 1 that has no positive divisors other than 1 and itself.,numbers.txt
+3,calculate,10,Find all primes in the list. A prime is a is a natural number greater than 1 that has no positive divisors other than 1 and itself.,numbers.txt

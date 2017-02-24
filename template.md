@@ -16,7 +16,7 @@ input til programmet
 <h2>output</h2>
 eksempel på output
 <div>
-<span> <code> some input </code></span>
+<span> <code> some input </code></span>->
 <span> <code> some output </code></span>
 </div>
 </div>

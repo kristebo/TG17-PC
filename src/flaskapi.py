@@ -47,6 +47,7 @@ def gettask(taskid):
                 buffer = fd.readlines()
 
             return jsonify({'task_content':buffer})
+    abort(404)
 
 
 @app.route('/tgpc/api/tasks',methods=['GET'])

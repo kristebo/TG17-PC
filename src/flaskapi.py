@@ -5,7 +5,7 @@ import csv, codecs
 app = Flask(__name__)
 # [
 #          {'number': 1, 'title': title, 'points': points, 'content': content, 'files': files},
-#          {'number': 1, 'title': title, 'points': points, 'content': content, 'files': files}
+#          {'number': 2, 'title': title, 'points': points, 'content': content, 'files': files}
 #          ]
 
 
@@ -13,7 +13,7 @@ app = Flask(__name__)
 csvfile = open('tasks.txt', 'r')
 rows=[]
 i=0
-fieldnames = ("_id", "title", "points", "content", "fileurl")
+fieldnames = ("_id", "title", "points", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
 key = '24'
 print reader
@@ -38,8 +38,15 @@ def make_hello():
 
 
 @app.route('/tgpc/api/gettask/<int:taskid>/')
+@require_appkey
 def gettask(taskid):
-    return jsonify({'task':rows[taskid]})
+    for row in rows:
+        if int(row["_id"]) == taskid:
+            buffer = ""
+            with open(row["contenturl"]) as fd:
+                buffer = fd.readlines()
+
+            return jsonify({'task_content':buffer})
 
 
 @app.route('/tgpc/api/tasks',methods=['GET'])

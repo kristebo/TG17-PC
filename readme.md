@@ -1,10 +1,13 @@
-tasks er en CSV-fil med følgende format:
-_id,title,points,text,[fileurls]
+tasks is a CSV-file with the following format:
+
+\__id,title,points,taskcontentpath
+
 ##_id
-bare et tall
+Integer
+
 ##title
-oppgaven tittel
+title of the task
+
 ##text
-Oppgaveteksten med er html er tillatt. men strippa for følgende tags: \<html\> \<head\> ,\<body\> og \<script\>. til formatering Formatering kan bootstap3 klassene brukes.
-##[fileurls]
-Array med urler til forskjellige filer, bilder, dataset etc.
+HTML without: \<html\> \<head\> ,\<body\> nd \<script\>-tags. bootstrap3 formatting-classes
+

@@ -1,6 +1,6 @@
 tasks is a CSV-file with the following format:
 
-\__id,title,points,taskcontentpath
+_\_id,title,points,taskcontentpath_
 
 ##_id
 Integer

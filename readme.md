@@ -7,7 +7,14 @@ Integer
 
 ##title
 title of the task
+##filename
+en fil med beskrivelsen av oppgaven
 
 ##text
-HTML without: \<html\> \<head\> ,\<body\> nd \<script\>-tags. bootstrap3 formatting-classes
++ HTML without: 
+- \<html\> 
+- \<head\> 
+- \<body\> 
+- \<script\>-tags. 
++ bootstrap3 formatting-classes
 

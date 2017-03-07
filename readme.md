@@ -7,7 +7,8 @@ Integer
 
 ##title
 title of the task
-##filename
+
+##taskcontentpath
 en fil med beskrivelsen av oppgaven
 
 ##text

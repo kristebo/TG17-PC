@@ -1,1 +1,6 @@
-1,2048,10,task3.txt
+1,FENCE,10,task3.txt
+2,len,10,task2.txt
+3,Sodoku,350,sudoku.txt
+4,2048,100,2048.txt
+5,networking,50,networking.txt
+6,banquette,200,banquette.txt

@@ -1,13 +1,13 @@
 <div class="container">
 <div class="jumbotron text-center">
 <h1>
-[title]
+FENCE!
 </h1>
 <p>
-author
+Krister Borge
 </p>
 <p>
-[points]
+10
 </p>
 </div>
 <div>

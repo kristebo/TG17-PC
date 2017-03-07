@@ -1,0 +1,43 @@
+<div class="container">
+<div class="jumbotron text-center">
+<h1>
+[title]
+</h1>
+<p>
+author
+</p>
+<p>
+[points]
+</p>
+</div>
+<div>
+  <h2> Oppgave </h2>
+  Bla bla
+</div>
+<div>
+<h2> input </h2>
+ Bla bla om input
+   <div class="container">
+    <h2> eksempler </h2>
+    <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><b>INPUT</b></th>
+          <th><b>OUTPUT</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>foo</td>
+          <td>bar</td>
+        </tr>
+        <tr>
+          <td>meh</td>
+          <td>gah</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+  </div>

@@ -4,8 +4,9 @@ from functools import wraps
 import csv, codecs
 app = Flask(__name__)
 # [
-#          {'number': 1, 'title': title, 'points': points, 'content': content, 'files': files},
-#          {'number': 2, 'title': title, 'points': points, 'content': content, 'files': files}
+#          {'number': 1, 'title': title, 'points': points, 'content': contenturl},
+#          {'number': 2, 'title': title, 'points': points, 'content': contenturl} 
+# 	   ...
 #          ]
 
 

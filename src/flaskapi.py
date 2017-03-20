@@ -38,7 +38,7 @@ def make_hello():
     return "glalalla"
 
 
-@app.route('/tgpc/api/gettask/<int:taskid>/')
+@app.route('/tgpc/api/gettask/<int:taskid>/', methods=['GET'])
 @require_appkey
 def gettask(taskid):
     for row in rows:

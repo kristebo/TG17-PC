@@ -17,7 +17,7 @@ Krister Borge
 </div>
 <div>
 <h2> input </h2>
-  antall (float) meter med gjære.
+  antall (float) meter med gjerde.
    <div class="container">
     <h2> eksempler </h2>
     <div class="table-responsive">

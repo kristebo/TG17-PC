@@ -1,13 +1,13 @@
 from flask import Flask, json, jsonify, Response, request, abort, os
 from functools import wraps
-from 
+from
 
 import csv, codecs
 app = Flask(__name__)
 key = '42'
 
 #uploads
-UPLOAD_FOLDER = '/path/to/the/uploads'
+UPLOAD_FOLDER = 'tg/TG17-PC/src/tgpcinn/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'py', 'go', 'c', 'sh', 'cpp', 'make',])
 
 def require_appkey(view_function):

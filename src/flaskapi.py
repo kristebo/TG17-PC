@@ -5,7 +5,7 @@ import csv, codecs
 app = Flask(__name__)
 # [
 #          {'number': 1, 'title': title, 'points': points, 'content': contenturl},
-#          {'number': 2, 'title': title, 'points': points, 'content': contenturl} 
+#          {'number': 2, 'title': title, 'points': points, 'content': contenturl}
 # 	   ...
 #          ]
 
@@ -21,7 +21,7 @@ print reader
 for row in reader:
     rows.append(row)
 
-# For having a key. Do localhost:5000/path/here?key=24
+# For having a key. Do host:5000/path/here?key=24
 def require_appkey(view_function):
     @wraps(view_function)
     # the new, post-decoration function. Note *args and **kwargs here.

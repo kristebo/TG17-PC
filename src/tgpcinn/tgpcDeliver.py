@@ -1,3 +1,4 @@
+#!python2
 from flask import Flask, json, jsonify, Response, request, abort, os
 from functools import wraps
 import csv, codecs
@@ -12,6 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__)
 key = '42'
 # read the directories
+
 def make_tree(path):
     tree = dict(name=os.path.basename(path), children=[])
     try: lst = os.listdir(path)
@@ -43,7 +45,8 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/tgpcdeliver', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -73,13 +76,13 @@ def upload_file():
 
 
 
-@app.route('tgpcdeliver/api/delivery/', methods=['GET', 'POST'])
+@app.route('/tgpcdeliver/api/delivery/', methods=['GET', 'POST'])
 @require_appkey
 def delivery():
     id=request.args.get('_id')
 
 
-@app.route('/tgpc/api/getpoints/')
+@app.route('/tgpcdeliver/api/getpoints/')
 @require_appkey
 def getpoint():
     id=request.args.get('_id')

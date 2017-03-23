@@ -1,14 +1,14 @@
 #!python2
-from flask import Flask, json, jsonify, Response, request, abort, os
+from flask import Flask, json, jsonify, Response, request, abort
 from functools import wraps
-import csv, codecs
+import csv, codecs, os
 
 ## http://flask.pocoo.org/docs/0.12/patterns/fileuploads/
 
 #uploads
 UPLOAD_FOLDER = '../upload'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'py', 'go', 'c', 'sh', 'cpp', 'make',])
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app = Flask(__name__)
 key = '42'
@@ -61,6 +61,7 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            print filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('uploaded_file',
                                     filename=filename))

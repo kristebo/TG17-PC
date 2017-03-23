@@ -1,29 +1,30 @@
 <div class="container">
 <div class="jumbotron text-center">
 <h1>
-[title]
+Fibonacci
 </h1>
 <p>
 author
 </p>
 <p>
-[points]
+150
 </p>
 </div>
 <div>
-  <h2> Oppgave </h2>
-  Bla bla
+  <h2> Fibonaccitallene </h2>
+  fibonaccitallrekke er definert som summen av de to foregående.
+  Skriv et programm som lager de 100 første tallene.
 </div>
 <div>
 <h2> input </h2>
- SHITS
+ Du skal ikke ha noe input til programmet.
 <h2> output </h2>
- BLA BLA
+  de 100 første tallene i fibonacci-rekka.
 </div>
 <div>
   <div class="container">
   <h2> eksempler </h2>
-  <div class="table-responsive">
+      <div class="table-responsive">
       <table class="table">
       <thead>
         <tr>
@@ -33,15 +34,15 @@ author
       </thead>
       <tbody>
         <tr>
-          <td>foo</td>
-          <td>bar</td>
+          <td>N/A</td>
+          <td>N/A</td>
         </tr>
         <tr>
-          <td>meh</td>
-          <td>gah</td>
+          <td>N/A</td>
+          <td>N/A</td>
         </tr>
       </tbody>
-    </table>
-  </div>
+      </table>
+      </div>
   </div>
 </div>

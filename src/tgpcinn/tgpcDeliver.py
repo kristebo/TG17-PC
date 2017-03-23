@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 #uploads
 UPLOAD_FOLDER = '../upload'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'py', 'go', 'c', 'sh', 'cpp', 'make',])
-#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app = Flask(__name__)
 key = '42'

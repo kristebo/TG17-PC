@@ -1,0 +1,49 @@
+<div class="container">
+<div class="jumbotron text-center">
+<h1>
+Numbers
+</h1>
+<p>
+Kristebo
+</p>
+<p>
+200
+</p>
+</div>
+<div>
+  <h2> Numbers </h2>
+  Et hvert tall kan skrives som et produktet av andre.
+  De tallene som er perfekt for dette er primtallene. (2, 3, 5, 7, 11, 13, 17, 19. osv)
+  Primtallene er tall som kun kan deles på seg selv eller 1. Siden 1 er ikke et primtall -> 2 er det minste.
+</div>
+<div>
+<h2> input </h2>
+ et heltall som skal faktoriseres
+<h2> output </h2>
+ en streng av faktorer skilt med tegnet *
+</div>
+ <div>
+   <div class="container">
+    <h2> eksempler </h2>
+    <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><b>INPUT</b></th>
+          <th><b>OUTPUT</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>2 * 2 * 5 * 5</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

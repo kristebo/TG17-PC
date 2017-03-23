@@ -1,6 +1,7 @@
 1,FENCE,10,task1.txt
-2,len,10,task2.txt
-3,Sodoku,350,sudoku.txt
-4,2048,100,2048.txt
-5,networking,50,networking.txt
-6,banquette,200,banquette.txt
+2,len,10,len.txt
+3,fibonacci,35,fibo.txt
+4,2048,50,2048.txt
+5,numbers,50,numbers.txt
+6,3d-transport,20,3d-transport.txt
+7,stavelser,50,stavelser.txt

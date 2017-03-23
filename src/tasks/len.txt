@@ -1,0 +1,64 @@
+<div class="container">
+<div class="jumbotron text-center">
+<h1>
+LEN
+</h1>
+<p>
+Kristebo
+</p>
+<p>
+10
+</p>
+</div>
+<div>
+  <h2> Oppgave </h2>
+  Finn den det lengste ordet i en ordliste ekskulder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.
+</div>
+<div>
+<h2> input </h2>
+ en liste med norske ord.
+ her er <a href=[host]/ord.txt>ordlisten</a>
+<h2> output </h2>
+ lengden på det lengste ordet.
+</div>
+<div>
+  <div class="container">
+  <h2> eksempler </h2>
+  <div class="table-responsive">
+      <table class="table">
+      <thead>
+        <tr>
+          <th><b>INPUT</b></th>
+
+          <th><b>OUTPUT</b></th>
+          lengden på det lengste ordet.
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          <pre>
+          forøkelse
+          fane
+          føye sammen
+          innvending
+          frontrute
+	      </pre>
+          </td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>
+          <pre>
+          arvlighet
+          kokett
+          enstemmighet på kvegfarm
+          </pre>
+          </td>
+          <td>10</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>

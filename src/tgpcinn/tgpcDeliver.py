@@ -1,5 +1,5 @@
 #!python2
-from flask import Flask, json, jsonify, Response, request, abort
+from flask import Flask, json, jsonify, Response, request, abort, redirect
 from functools import wraps
 import csv, codecs, os
 from werkzeug.utils import secure_filename
@@ -63,7 +63,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             print filename
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            file.save(os.path.join(UPLOAD_FOLDER, filename))
             return redirect(url_for('uploaded_file',
                                     filename=filename))
     return '''

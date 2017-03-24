@@ -5,3 +5,16 @@
 5,numbers,50,numbers.txt
 6,3d-transport,20,3d-transport.txt
 7,stavelser,50,stavelser.txt
+8,roots,40,roots.txt
+9,irational,40,irational.txt
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,

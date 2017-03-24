@@ -7,7 +7,7 @@
 7,stavelser,50,stavelser.txt
 8,roots,40,roots.txt
 9,irational,40,irational.txt
-10,
+10,cryptocrypto,60,vignere.txt
 11,
 12,
 13,

@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 
-csvfile = open('tasks.txt', 'r')
+csvfile = open('src/tasks/tasks.txt', 'r')
 rows=[]
 i=0
 fieldnames = ("_id", "title", "points", "contenturl")
@@ -55,6 +55,25 @@ def gettask(taskid):
 @require_appkey
 def get_tasks():
     return jsonify({'tasks':rows})  #will return the json
+
+@app.route('/tgpc/api/taskstate',methods=['GET'])
+@require_appkey
+def get_taskstate(taskid):
+    #return the praticipants that have done this task and succeeded.
+    # _id, part1, part2, ..., partn
+    pass
+
+@app.route('/tgpc/api/parttotal')
+@require_appkey
+def get_participant_total(partid):
+    #return the sum for this partid and taskids.
+    #partid, sum, task1, ..., taskn
+    pass
+
+def deliverfile(rq, partid, taskid):
+    #read the request if it is a file request, save it as taskid_partid
+    #fallback dropbox
+    pass
 
 if __name__ == '__main__':
     app.run()

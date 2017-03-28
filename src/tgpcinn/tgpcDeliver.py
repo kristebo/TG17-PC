@@ -4,12 +4,13 @@ import os
 # will be used to redirect the user once the upload is done
 # and send_from_directory will help us to send/show on the
 # browser the file that the user just uploaded
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
 from werkzeug import secure_filename
 
 # Initialize the Flask application
 app = Flask(__name__)
-
+taskid=''
+partid=''
 # This is the path to the upload directory
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 # These are the extension that we are accepting to be uploaded
@@ -23,49 +24,21 @@ def allowed_file(filename):
 # This route will show a form to perform an AJAX request
 # jQuery is loaded to execute the request and update the
 # value of the operation
-@app.route('/')
-def index():
-    return """<!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-              rel="stylesheet">
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h3 class="text-muted">How To Upload a File</h3>
-          </div>
-          <hr/>
-          <div>
+# summary = request.args.get('summary', None) # use default value repalce 'None'
+# "localhost:5000/tgpc/api/?taskid=id&partid=id
 
-          <form action="upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="file"><br /><br />
-            <input type="submit" value="Upload">
-          </form>
-          </div>
-        </div>
-      </body>
-    </html>"""
-def success():
-    return """<!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-              rel="stylesheet">
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h3 class="text-muted">great success</h3>
-          </div>
-        </div>
-      </body>
-    </html>"""
+@app.route('/tgpc/api')
+def upload():
+    taskid=request.args.get('taskid', str)
+    partid=request.args.get('partid', str)
+    return render_template('upload.html')
+
+
+
 
 # Route that will process the file upload
-@app.route('/upload', methods=['POST'])
-def upload():
+@app.route('/upload', methods=['POST', 'GET'])
+def upload_file():
     # Get the name of the uploaded file
     file = request.files['file']
     # Check if the file is one of the allowed types/extensions
@@ -77,7 +50,7 @@ def upload():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # Redirect the user to the uploaded_file route, which
         # will basicaly show on the browser the uploaded file
-        return redirect(success())
+        return redirect(render_template('success.html'))
 
 # This route is expecting a parameter containing the name
 # of a file. Then it will locate that file on the upload

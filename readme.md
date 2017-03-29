@@ -26,13 +26,13 @@ en fil med beskrivelsen av oppgaven
 
 # JSON
 endpoints return these as json:
-- gettask
+- __gettask__ - 
   the task description as described in text
-- tasks
-  a list ov the tasks
-- usertotalpoints
+- __tasks__ - 
+  a list of the tasks
+- __usertotalpoints__ - 
   the paricipants total points
-- taskstate
+- __taskstate__ - 
   a list of the participants that has done that task
 
 # delivery will be on a own page.

@@ -9,8 +9,8 @@
 9,irational,40,src/tasks/irational.txt
 10,cryptocrypto,60,src/tasks/vignere.txt
 11,areal,30,src/tasks/areal.txt
-12,
-13,
+12,day of year,50,src/tasks/day_of_year.txt
+13,cows,70,src/tasks/cows.txt
 14,
 15,
 16,

@@ -9,9 +9,10 @@ app = Flask(__name__)
 # 	   ...
 #          ]
 
+participants = open('../in/src/participants.txt','r') # partid, sum
+tasksdone = open('src/in/src/tasksdone.txt','r') #taskname, partids
 
-
-csvfile = open('src/tasks/tasks.txt', 'r')
+csvfile = open('tasks/tasks.txt', 'r')
 rows=[]
 i=0
 fieldnames = ("_id", "title", "points", "contenturl")

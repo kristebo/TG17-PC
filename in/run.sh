@@ -8,4 +8,4 @@ if [ "$running" != "" ]; then
     docker rm flaskapiin
 fi
 
-docker run --name="flaskapiin" -d -p 5000:5000 -i tgpc/flaskapiin gunicorn --bind 0.0.0.0:5000 --pythonpath /usr/src/ wsgi:app
+docker run --name="flaskapiin" -d -p 5000:5000 -v $PWD/src/uploads:/usr/src/app/uploads -i tgpc/flaskapiin gunicorn --bind 0.0.0.0:5000 --pythonpath /usr/src/ wsgi:app

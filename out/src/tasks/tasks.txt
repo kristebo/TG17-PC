@@ -11,7 +11,7 @@
 11,areal,30,src/tasks/areal.txt
 12,day of year,50,src/tasks/day_of_year.txt
 13,cows,70,src/tasks/cows.txt
-14,
+14,automata,90,src/tasks/automata.txt
 15,
 16,
 17,

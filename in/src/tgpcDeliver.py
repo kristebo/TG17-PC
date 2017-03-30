@@ -25,7 +25,7 @@ def allowed_file(filename):
 def upload():
     taskid=request.args.get('taskid', type=str)
     partid=request.args.get('partid', type=str)
-    return render_template('upload.html', taskid=taskid,partid=partid)
+    return render_template('upload.html', taskid=taskid, partid=partid)
 
 
 
@@ -41,9 +41,32 @@ def upload_file():
     if file and allowed_file(file.filename):
         # Make the filename safe, remove unsupported chars
         filename = secure_filename(repr(partid)+'_'+repr(taskid)+"_"+file.filename)
+        print filename
         # Move the file form the temporal folder to
         # the upload folder we setup
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        print 'file saved'
         # Redirect the user to the uploaded_file route, which
         # will basicaly show on the browser the uploaded file
-        return render_template('success.html', taskid=taskid, partid=partid)
+        return render_template(success(taskid, partid))
+
+
+def success(task, part):
+    return render_template("""
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+              rel="stylesheet">
+      </head>
+      <body>
+          <div class="container">
+            <div class="header">
+              <h3 class="text-muted">such success.</h3>
+               {{partid}} has delivered in {{taskid}}.
+               You will soon get your result.
+            </div>
+          </div>
+          </body>
+        </html>
+        """, partid=part,taskid=task)

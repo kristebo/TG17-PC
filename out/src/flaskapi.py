@@ -12,7 +12,7 @@ app = Flask(__name__)
 participants = open('src/participants.txt','r') # partid, sum
 tasksdone = open('src/tasksdone.txt','r') #taskname, partids
 
-csvfile = open('tasks/tasks.txt', 'r')
+csvfile = open('src/tasks/tasks.txt', 'r')
 rows=[]
 i=0
 fieldnames = ("_id", "title", "points", "contenturl")
@@ -57,12 +57,6 @@ def gettask(taskid):
 def get_tasks():
     return jsonify({'tasks':rows})  #will return the json
 
-@app.route('/tgpc/api/taskstate',methods=['GET'])
-@require_appkey
-def get_taskstate(taskid):
-    #return the praticipants that have done this task and succeeded.
-    # _id, part1, part2, ..., partn
-    pass
 
 @app.route('/tgpc/api/taskstate',methods=['GET'])
 @require_appkey

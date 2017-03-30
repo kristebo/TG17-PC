@@ -6,7 +6,7 @@ app = Flask(__name__)
 taskid=''
 partid=''
 
-app.config['UPLOAD_FOLDER'] = 'src/uploads/'
+app.config['UPLOAD_FOLDER'] = 'uploads/'
 # These are the extension that we are accepting to be uploaded
 app.config['ALLOWED_EXTENSIONS'] = set(['txt', 'c', 'py', 'php', 'htm', 'html', 'go', 'sh'])
 

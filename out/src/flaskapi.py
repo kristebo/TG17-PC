@@ -9,8 +9,8 @@ app = Flask(__name__)
 # 	   ...
 #          ]
 
-participants = open('../in/src/participants.txt','r') # partid, sum
-tasksdone = open('../in/src/tasksdone.txt','r') #taskname, partids
+participants = open('participants.txt','r') # partid, sum
+tasksdone = open('tasksdone.txt','r') #taskname, partids
 
 csvfile = open('tasks/tasks.txt', 'r')
 rows=[]

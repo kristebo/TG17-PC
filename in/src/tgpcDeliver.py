@@ -48,4 +48,4 @@ def upload_file():
         # will basicaly show on the browser the uploaded file
         return render_template('success.html',taskid=taskid, partid=partid)
     else:
-        return render_template('failure.html', filename=filename)
+        return render_template('failure.html', filename=file.filename)

@@ -66,13 +66,14 @@ def get_taskstate(tasknr):
     fieldst=("taskname", "participants")
     rowstaskt=csv.DictReader(tasksdone, fieldst)
     for row in rowstaskt:
+        #print row
         rowstask.append(row)
-    return jsonify({'taskstate':rowstask[tasknr-1]})
+    return jsonify({'taskstate':rowstask[tasknr-1]}) #repr(rowstask[tasknr-1])
 
 
-@app.route('/tgpc/api/parttotal')
+@app.route('/tgpc/api/parttotal/<str:partid>')
 @require_appkey
-def get_participant_total():
+def get_participant_total(partid):
     #return the sum for this partid and taskids.
     #partid, sum
     #read rows in participants.txt
@@ -81,7 +82,12 @@ def get_participant_total():
     rowsparts=csv.DictReader(participants, fields)
     for row in rowsparts:
         participantslist.append(row)
-    return jsonify({'participants':participantslist})
+    for p in participantslist:
+        #print p
+        if p.get('partid')==partid:
+            return jsonify({'participant':p}) # p
+    return -1
+
 
 if __name__ == '__main__':
     app.run()

@@ -1,3 +1,3 @@
-task1,[foxboron, joms, kristebo]
+task1,[foxboron joms kristebo]
 task2,[]
-task3,[joms, adriah]
+task3,[joms adriah]

@@ -29,6 +29,19 @@ med den foregående og den etterfølgende ruten, og disse to kan ikke være
 samme rute.
 <item> Hvis det går en vei mellom to ruter, så er rutene tilkoblet hverandre.
 </li>
+</p>
+<p>
+Når du løser oppgaven er det greit å ha kjennskap til en del resultater, slik at
+du kan gjøre riktige antagelser når du skriver programmet ditt. Noen av disse er
+ganske åpenbare, men ha dem likevel i bakhodet senere.
+<li>
+<item> Dersom det ikke finnes noen sykliske veier fra en rute, så finnes det kun
+én vei til alle tilkoblede åpninger, og antall utveier fra ruten er dermed lik
+antall åpninger som er tilkoblet ruten.
+<item> Dersom det går en syklisk vei mellom to ruter, går det også en asyklisk vei
+mellom dem. Det er med andre ord aldri nødvendig å bruke en syklisk vei
+for å nå en bestemt rute, og vi skal derfor bare finne <strong>asykliske veier</strong>.
+</li>
 
 </div>
 <div>

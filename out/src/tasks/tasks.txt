@@ -12,7 +12,7 @@
 12,day of year,50,src/tasks/day_of_year.txt
 13,cows,70,src/tasks/cows.txt
 14,automata,90,src/tasks/automata.txt
-15,
+15,Labyrint,90,src/task/labyrint.txt
 16,
 17,
 18,

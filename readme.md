@@ -36,7 +36,7 @@ endpoints return these as json:
   a list of the participants that has done that task
 
 # delivery will be on a own page.
-  deliveri of one file username and task must be set.
+  delivery of one file partid (username) and taskid (int) must be set.
   
 # if needed  
 Delivery through Dropbox -> use the username from geekevents. (private browser if needed)

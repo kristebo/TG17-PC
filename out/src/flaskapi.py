@@ -58,19 +58,19 @@ def get_tasks():
     return jsonify({'tasks':rows})  #will return the json
 
 
-@app.route('/tgpc/api/taskstate',methods=['GET'])
+@app.route('/tgpc/api/taskstate/<int:tasknr>/',methods=['GET'])
 @require_appkey
-def get_taskstate(taskid):
+def get_taskstate(tasknr):
     #return the praticipants that have done this task and succeeded.
     # _id, [partids]
     fieldst=("taskname", "participants")
     rowstaskt=csv.DictReader(tasksdone, fieldst)
     for row in rowstaskt:
         rowstask.append(row)
-    return jsonify({'taskstate':rowstask})
+    return jsonify({'taskstate':rowstask[tasknr-1]})
 
 
-@app.route('/tgpc/api/parttotal')
+@app.route('/tgpc/api/parttotal/<str:partid>')
 @require_appkey
 def get_participant_total(partid):
     #return the sum for this partid and taskids.
@@ -81,7 +81,10 @@ def get_participant_total(partid):
     rowsparts=csv.DictReader(participants, fields)
     for row in rowsparts:
         participantslist.append(row)
-    return jsonify({'participants':participantslist})
+    for p in participantslist:
+        if p.get('parid')==partid:
+            return jsonify({'participant':p})
+    return -1
 
 if __name__ == '__main__':
     app.run()

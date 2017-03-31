@@ -1,0 +1,47 @@
+<div class="container">
+<div class="jumbotron text-center">
+<h1>
+TASK1
+</h1>
+<p>
+Some title
+</p>
+<p>
+10
+</p>
+</div>
+<div>
+  <h2> Oppgave </h2>
+  while(3+5==9):
+</div>
+<div>
+<h2> input </h2>
+ SHITS
+<h2> output </h2>
+ BLA BLA
+</div>
+<div>
+  <div class="container">
+  <h2> eksempler </h2>
+  <div class="table-responsive">
+      <table class="table">
+      <thead>
+        <tr>
+          <th><b>INPUT</b></th>
+          <th><b>OUTPUT</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>foo</td>
+          <td>bar</td>
+        </tr>
+        <tr>
+          <td>meh</td>
+          <td>gah</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>

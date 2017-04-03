@@ -9,10 +9,10 @@ app = Flask(__name__)
 # 	   ...
 #          ]
 
-participants = open('participants.txt','r') # partid, sum
-tasksdone = open('tasksdone.txt','r') #taskname, partids
+participants = open('src/participants.txt','r') # partid, sum
+tasksdone = open('src/tasksdone.txt','r') #taskname, partids
 
-csvfile = open('tasks/tasks.txt', 'r')
+csvfile = open('src/tasks/tasks.txt', 'r')
 rows=[]
 i=0
 fieldnames = ("_id", "title", "points", "contenturl")
@@ -71,7 +71,7 @@ def get_taskstate(tasknr):
     return jsonify({'taskstate':rowstask[tasknr-1]}) #repr(rowstask[tasknr-1])
 
 
-@app.route('/tgpc/api/parttotal/<str:partid>')
+@app.route('/tgpc/api/parttotal/<partid>')
 @require_appkey
 def get_participant_total(partid):
     #return the sum for this partid and taskids.

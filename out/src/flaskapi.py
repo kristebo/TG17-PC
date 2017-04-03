@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 participants = open('src/participants.txt','r') # partid, sum
 tasksdone = open('src/tasksdone.txt','r') #taskname, partids
-
+rowtask=[]
 csvfile = open('src/tasks/tasks.txt', 'r')
 rows=[]
 i=0

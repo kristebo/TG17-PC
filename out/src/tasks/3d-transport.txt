@@ -1,0 +1,39 @@
+{
+  "_id": 1,
+  "title": "Tuneller",
+  "points": 150,
+  "taskTeaser": "NP-komplett? Hva er det? No-Problem!",
+  "taskText": " I vikingskipet er det mange mennesker og det er langt mellom rader og folk.
+    Men nytt for i år er at vi kan teleportere fra sted til hvor som helst i hallen.
+    <br>
+    Dette er selvfølgelig ikke gratis og kosten er for å sette opp transportstasjoner og koble dem opp ved
+    min(|x_a-x_b|,|y_a-y_b|,|z_a-z_b|)
+    <br>
+    Skriv et program som finner den minimale kosten for alle stasjonene som settes opp.",
+  "input": [
+    {
+      "name": "et heltall som sier hvor mange stasjoner det er i systemet",
+      "type": "int"
+    },
+    {
+      "name": "en nxm matrise av heltall som beskvriver posisjonen til stasjonene",
+      "type": "string"
+    }
+  ],
+  "output": [
+    {
+      "name": "Den totale kosten for alle stasjone på en linje",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "2\n 1 5 10\n 7 8 2",
+      "output": "3"
+    },
+    {
+      "input": "3\n -1 -1 -1\n 5 5 5\n 10 10 10\n",
+      "output": "11"
+    }
+  ]
+}

@@ -1,20 +1,14 @@
-1,FENCE,10,src/tasks/task1.txt
-2,len,10,src/tasks/len.txt
-3,fibonacci,35,src/tasks/fibo.txt
-4,2048,50,src/tasks/2048.txt
-5,numbers,50,src/tasks/numbers.txt
-6,3d-transport,20,src/tasks/3d-transport.txt
-7,stavelser,50,src/tasks/stavelser.txt
-8,roots,40,src/tasks/roots.txt
-9,irational,40,src/tasks/irational.txt
-10,cryptocrypto,60,src/tasks/vignere.txt
-11,areal,30,src/tasks/areal.txt
-12,day of year,50,src/tasks/day_of_year.txt
-13,cows,70,src/tasks/cows.txt
-14,automata,90,src/tasks/automata.txt
-15,Labyrint,90,src/task/labyrint.txt
-16,
-17,
-18,
-19,
-20,
+1,FENCE,10,"Hva kan du gjøre med et gjerde?",src/tasks/task1.txt
+2,len,10,"Hvor lange ord finnes det",src/tasks/len.txt
+3,fibonacci,"lek med en tallrekke",35,src/tasks/fibo.txt
+4,2048,"et morsomt spill"50,src/tasks/2048.txt
+5,numbers,"primtall er rare dyr",50,src/tasks/numbers.txt
+6,3d-transport,"NP-komplett? Hva er det? No Problem!",20,src/tasks/3d-transport.txt
+7,stavelser,"Det er skikkelig vanskelig med språk, spesielt lyder",50,src/tasks/stavelser.txt
+8,irational,"brøker"40,src/tasks/irational.txt
+9,cryptocrypto,"kan du kryptering?",60,src/tasks/vignere.txt
+10,areal,"rare former, store areal".30,src/tasks/areal.txt
+11,day of year,"Det er mange dager i et år",50,src/tasks/day_of_year.txt
+12,cows,"Grådige kuer",70,src/tasks/cows.txt
+13,automata,"Workshop: cellulær automat",90,src/tasks/automata.txt
+14,Labyrint,"finn den flotteste veien gjennom en labyrint",90,src/task/labyrint.txt

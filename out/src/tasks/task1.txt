@@ -4,7 +4,7 @@
 FENCE!
 </h1>
 <p>
-Krister Borge
+kristebo
 </p>
 <p>
 10
@@ -12,8 +12,8 @@ Krister Borge
 </div>
 <div>
   <h2> Oppgave </h2>
-  Du får tildelt et vist antall meter med gjære.
-  Hva blir det maksimale størrelsen du kan sperre av med dette gjæret?
+  Du får tildelt et vist antall meter med gjerde.
+  Hva blir det maksimale størrelsen du kan sperre av med dette gjerdet?
 </div>
 <div>
 <h2> input </h2>

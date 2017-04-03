@@ -9,13 +9,13 @@ app = Flask(__name__)
 # 	   ...
 #          ]
 
-participants = open('participants.txt','r') # partid, sum
-tasksdone = open('tasksdone.txt','r') #taskname, partids
 
+tasksdone = open('tasksdone.txt','r') #taskname, partids
+ord=open('ord.txt', 'r')
 csvfile = open('tasks/tasks.txt', 'r')
 rows=[]
 i=0
-fieldnames = ("_id", "title", "points", "contenturl")
+fieldnames = ("_id", "title", "teaser", "points", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
 key = '24'
 print reader
@@ -63,6 +63,7 @@ def get_tasks():
 def get_taskstate(tasknr):
     #return the praticipants that have done this task and succeeded.
     # _id, [partids]
+    rowstask=[]
     fieldst=("taskname", "participants")
     rowstaskt=csv.DictReader(tasksdone, fieldst)
     for row in rowstaskt:
@@ -82,9 +83,29 @@ def get_participant_total(partid):
     for row in rowsparts:
         participantslist.append(row)
     for p in participantslist:
-        if p.get('parid')==partid:
+        if p.get('partid')==partid:
             return jsonify({'participant':p})
     return -1
+
+## TODO: bygg leader board.
+@app.route('/tgpc/api/leaderboard')
+@require_appkey
+def get_leader_board():
+    participants = open('participants.txt','r')
+    participantslist=[]
+    fields=("partid","sum")
+    participantsDict=csv.DictReader(participants, fields)
+    for row in participantsDict:
+        participantslist.append(row)
+    lb=sorted(participantslist, key=lambda k: int(k['sum']))
+
+
+## støtte funskjon
+@app.route('tgpc/api/ord')
+def serveord():
+    ordliste=ord.readlines()
+    return ordliste
+
 
 if __name__ == '__main__':
     app.run()

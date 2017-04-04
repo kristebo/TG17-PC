@@ -48,7 +48,7 @@ Kristebo
  innebygde fonter
  hensynsløshet
  grensesnitt
- eiendoms-
+ eiendoms
  bestøvning
  foredragsholder
  firling
@@ -69,7 +69,8 @@ Kristebo
  gras
  </pre>
 <h2> output </h2>
- antall stavelser  i ordet med flest stavelser.
+
+ Finn antall stavelser i ordene. Ignorer de som er delt opp i fler ord, men tell med alle ord i slike setninger likevel.
 </div>
 <div>
   <div class="container">
@@ -88,13 +89,9 @@ Kristebo
           <td>
           <pre>
           forøkelse
-          fane
-          føye sammen
-          innvending
-          frontrute
 	      </pre>
           </td>
-          <td>4</td>
+          <td>forøkelse 4</td>
         </tr>
         <tr>
           <td>
@@ -104,7 +101,14 @@ Kristebo
           enstemmighet på kvegfarm
           </pre>
           </td>
-          <td>4</td>
+          <td>
+          <pre>
+          arvlighet 3
+          kokett 2
+          enstemmighet 4
+          på 1
+          kvegfarm 2
+          </pre></td>
         </tr>
       </tbody>
     </table>

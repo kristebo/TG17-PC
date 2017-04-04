@@ -12,12 +12,12 @@ Kristebo
 </div>
 <div>
   <h2> Oppgave </h2>
-  Finn den det lengste ordet i en ordliste ekskulder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.
+  Finn den det lengste ordet i en ordliste, ekskluder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.
 </div>
 <div>
 <h2> input </h2>
  en liste med norske ord.
- her er <a href=[host]/ord.txt>ordlisten</a>
+ her er <a href=tomcat.mrow.me/tgpc/api/ord>ordlisten</a>
 <h2> output </h2>
  lengden på det lengste ordet.
 </div>

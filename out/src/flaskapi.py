@@ -87,7 +87,17 @@ def get_participant_total(partid):
         #print p
         if p.get('partid')==partid:
             return jsonify({'participant':p}) # p
-    return -1
+    return -
+
+
+## TODO: post methods!
+@app.route('tgpc/api/deliver/<taskid>',methods=['GET', 'POST'])
+@require_appkey
+def in_request():
+def add_message(taskid):
+    content = request.json
+    print content
+    return uuid
 
 
 if __name__ == '__main__':

@@ -98,12 +98,12 @@ def get_participant_total(partid):
 def get_leader_board():
     participants = open('participants.txt','r')
     participantslist=[]
-    fields=("partid","sum")
+    fields=("partid","partname","sum")
     participantsDict=csv.DictReader(participants, fields)
     for row in participantsDict:
         participantslist.append(row)
     lb=sorted(participantslist, key=lambda k: int(k['sum']))
-
+    return jsonify({"leaderboard":lb})
 
 ## støtte funskjon
 @app.route('tgpc/api/ord')

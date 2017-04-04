@@ -1,99 +1,29 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-Labyrint
-</h1>
-<p>
-kristebo
-</p>
-<p>
-90
-</p>
-</div>
-<div>
-  <h2> Oppgave </h2>
-  I denne oppgaven skal du bruke rekursjon til å lage et program som er i stand
-til å finne veien ut av en labyrint. Labyrintene i denne oppgaven er bygd opp av
-kvadratiske ruter som man enten kan gå gjennom eller ikke (à la labyrinter laget
-av hekker).
-<br>
-<li>
-<item> En rute er den minste enheten i labyrinten (hver rute er representert ved ett tegn i filen).
-<ul>
-<item> Hvite ruter kan man gå gjennom <pre>.</pre>
-<item> Sorte ruter kan man ikke gå gjennom <pre>#</pre>
-</ul>
-<item> To ruter er naboer dersom de har en felles side.
-<item> En vei er en sekvens av hvite ruter slik at hver rute i sekvensen er nabo
-med den foregående og den etterfølgende ruten, og disse to kan ikke være
-samme rute.
-<item> Hvis det går en vei mellom to ruter, så er rutene tilkoblet hverandre.
-</li>
-</p>
-<p>
-Når du løser oppgaven er det greit å ha kjennskap til en del resultater, slik at
-du kan gjøre riktige antagelser når du skriver programmet ditt. Noen av disse er
-ganske åpenbare, men ha dem likevel i bakhodet senere.
-<li>
-<item> Dersom det ikke finnes noen sykliske veier fra en rute, så finnes det kun
-én vei til alle tilkoblede åpninger, og antall utveier fra ruten er dermed lik
-antall åpninger som er tilkoblet ruten.
-<item> Dersom det går en syklisk vei mellom to ruter, går det også en asyklisk vei
-mellom dem. Det er med andre ord aldri nødvendig å bruke en syklisk vei
-for å nå en bestemt rute, og vi skal derfor bare finne <strong>asykliske veier</strong>.
-</li>
-
-</div>
-<div>
-<h2> input </h2>
- to tall etter hverandre for bredde og høyde av labyrinten. (ruter)
- en matrise av . og # for hele labyrinten.
-<h2> output </h2>
- antall steg fra start til utgang.
-</div>
-<div>
-  <div class="container">
-  <h2> eksempler </h2>
-  <div class="table-responsive">
-      <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-          <pre>
-13
-13
-#############
-..#.........#
-#.#######.###
-#...#...#.#.#
-###.#.#.###.#
-#.#.#.#.....#
-#.#.#.#######
-#...#.......#
-#.#########.#
-#.#.........#
-#.#.#######.#
-#...#........
-#############
-          </pre>
-          </td>
-          <td>
-          0.4s lengde 30
-
-          </td>
-        </tr>
-        <tr>
-          <td>meh</td>
-          <td>gah</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  </div>
-</div>
+{
+  "_id": 14,
+  "title": "labyrint",
+  "points": 90,
+  "taskTeaser": "This is a world. Calculate it!",
+  "taskText": "I denne oppgaven skal du bruke rekursjon til å lage et program som er i stand til å finne veien ut av en labyrint. Labyrintene i denne oppgaven er bygd opp avkvadratiske ruter som man enten kan gå gjennom eller ikke (à la labyrinter lagetav hekker).<br />En rute er den minste enheten i labyrinten (hver rute er representert ved ett tegn i inputen).<br /><p>1. Hvite ruter kan man gå gjennom .<br />2. Sorte ruter kan man ikke gå gjennom #<br /></p><br />- To ruter er naboer dersom de har en felles side.<br />- En vei er en sekvens av hvite ruter slik at hver rute i sekvensen er nabo med den foregående og den etterfølgende ruten, og disse to kan ikke være samme rute.<br />- Hvis det går en vei mellom to ruter, så er rutene tilkoblet hverandre.</p><br /><p>Når du løser oppgaven er det greit å ha kjennskap til en del resultater, slik at du kan gjøre riktige antagelser når du skriver programmet ditt. Noen av disse er ganske åpenbare, men ha dem likevel i bakhodet senere.<br /><p>- Dersom det ikke finnes noen sykliske veier fra en rute, så finnes det kun én vei til alle tilkoblede åpninger, og antall utveier fra ruten er dermed lik antall åpninger som er tilkoblet ruten.<br />- Dersom det går en syklisk vei mellom to ruter, går det også en asyklisk vei mellom dem. Det er med andre ord aldri nødvendig å bruke en syklisk vei for å nå en bestemt rute, og vi skal derfor bare finne <b>asykliske veier</b>.</p><br /><br /><b> input </b><br /> To tall etter hverandre for bredde og høyde av labyrinten. (ruter) en matrise av . og # for hele labyrinten.<br /><b> output </b><br /> antall steg fra start til utgang.",
+  "input": [
+    {
+      "name": "labyrintens størrelse",
+      "type": "int"
+    },
+    {
+      "name": "matrise av # og .",
+      "type": "string[]"
+    }
+  ],
+  "output": [
+    {
+      "name": "antall steg",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "13 \n13 \n############# \n..#.........# \n#.#######.### \n#...#...#.#.# \n###.#.#.###.# \n#.#.#.#.....# \n#.#.#.####### \n#...#.......# \n#.#########.# \n#.#.........# \n#.#.#######.# \n#...#........ \n#############",
+      "output": "..."
+    }
+  ]
+}

@@ -1,65 +1,34 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-Tuneller
-</h1>
-<p>
-Kristebo
-</p>
-<p>
-200
-</p>
-</div>
-<div>
-  <h2> 3d-transport </h2>
-  I vikingskipet er det mange mennesker og det er langt mellom rader og folk.
-  Men nytt for i år er at vi kan teleportere fra sted til hvor som helst i hallen.
-
-  Dette er selvfølgelig ikke gratis og kosten er for å sette opp transportstasjoner og koble dem opp ved
-  min(|x_a-x_b|,|y_a-y_b|,|z_a-z_b|)
-
-  Skriv et program som finner den minimale kosten for alle stasjonene som settes opp.
-</div>
-<div>
-<h2> input </h2>
-  det første tallet er antall transportstasjoner.
-<h2> output </h2>
- Den totale kosten for alle stasjone på en linje.
-</div>
- <div>
-   <div class="container">
-    <h2> eksempler </h2>
-    <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-          <pre>
-          2
-          1 5 10
-          7 8 2
-          </pre></td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>
-          <pre>
-          3
-          -1 -1 -1
-          5 5 5
-          10 10 10
-          </pre>
-          </td>
-          <td>11</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-  </div>
-</div>
+{
+  "_id": 6,
+  "title": "Tuneller",
+  "points": 100,
+  "taskTeaser": "Magisk transportsystem",
+  "taskText": "  I vikingskipet er det mange mennesker og det er langt mellom rader og folk. <br />Men nytt for i år er at vi kan teleportere fra sted til hvor som helst i hallen.<br /><br />Dette er selvfølgelig ikke gratis og kosten er for å sette opp transportstasjoner og koble dem opp ved min(|x_a-x_b|,|y_a-y_b|,|z_a-z_b|)<br /><br />Skriv et program som finner den minimale kosten for alle stasjonene som settes opp.<br /><b> input </b><br />det første tallet er antall transportstasjoner.<br /><b> output </b><br />Den totale kosten for alle stasjone på en linje.
+",
+  "input": [
+    {
+      "name": "antall stasjoner",
+      "type": "int"
+    },
+    {
+      "name": "vektorer (x, y, z) med posisjoner",
+      "type": "string"
+    }
+  ],
+  "output": [
+    {
+      "name": "min av kosten for alle stasjonene i systemet",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "2 \n1 5 10 \n7 8 2 \n",
+      "output": "3"
+    },
+    {
+      "input": "3 \n-1 -1 -1 \n5 5 5 \n10 10 10 \n",
+      "output": "11"
+    }
+  ]
+}

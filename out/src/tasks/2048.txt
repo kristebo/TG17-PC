@@ -1,78 +1,30 @@
-  <div class="container">
-  <div class="jumbotron text-center">
-  <h1>
-  Areal
-  </h1>
-  <p>
-  kristebo
-  </p>
-  <p>
-  30
-  </p>
-  </div>
-  <div>
-    <h2> Oppgave </h2>
-    </div>
-      <h2> Task </h2>
-      2048 is a single-player puzzle game created by Gabriele Cirulli
-      1. It is played on a 4×4 grid that contains integers  that are powers of 2
-      2. The player can use a keyboard arrow key (left/up/right/down) to move all the tiles simultaneously.
-
-      Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid.
-      If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided.
-      The resulting tile cannot merge with another tile again in the same move. Please observe this merging behavior carefully in all Sample Inputs and Outputs.
-
-  </div>
-  <div>
-  <h2> input </h2>
-  The input is always a valid game state of a 2048 puzzle. The first four lines of input, that each contains four integers,
-  describe the 16 integers in the 4×4 grid of 2048 puzzle.
-  The j-th integer in the i-th line denotes the content of the cell located at the j-th row and the i-th cell.
-  For this problem, all integers in the input will be either {0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024}.
-  Integer 0 means an empty cell.
-
-  The fifth line of input contains an integer 0, 1, 2, or 3 that denotes a left, up, right, or down move executed by the player,
-  respectively.
-  <h2> output </h2>
-   arealet av formen
-  </div>
-  <div>
-    <div class="container">
-    <h2> eksempler </h2>
-    <div class="table-responsive">
-        <table class="table">
-        <thead>
-          <tr>
-            <th><b>INPUT</b></th>
-            <th><b>OUTPUT</b></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-<pre>
-2 0 0 2
-4 16 8 2
-2 64 32 4
-1024 1024 64 0
-0
-</pre>
-            </td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>
-             <pre>
-4 0 0 0
-4 16 8 2
-2 64 32 4
-2048 64 0 0
-            </pre>
-            </td>
-            <td>2</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-  </div>
+{
+  "_id": 4,
+  "title": "2048",
+  "points": 60,
+  "taskTeaser": "Power of 2",
+  "taskText": "<p>2048 is a single-player puzzle game created by Gabriele Cirulli<br />1. It is played on a 4×4 grid that contains integers  that are powers of 2<br />2. The player can use a keyboard arrow key (left/up/right/down) to move all the tiles simultaneously.</p><br /><p>Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid.If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. <br />The resulting tile cannot merge with another tile again in the same move. Please observe this merging behavior carefully in all Sample Inputs and Outputs. <br />  Inputen er alltid et gyldig 2048 brett. første del er brettet, i et 4x4 rutenett er det 16 heltall.<br />Det j'te heltallet i  den i'te raden gir innholdet til ruten  på  j'te raden og i'te ruta.<br />I dette problemet er heltallene alltid potenser av 2 opp til 1024 (0 2 4 8 16 32 64 128 256 512 og 1024).<br />  Tallet 0 betyr en  tom celle.<br /><br />den femte linja er et tall (0, 1, 2, eller 3) som gir henholdsvis venstre, op, høyre, eller ned bevegelse<br /><b> output </b> <br />ny matrise avhengig av retninggen du har gått<br />
+",
+  "input": [
+    {
+      "name": "matrisen til brettet i form av en 4x4 matrise",
+      "type": "int"
+    },
+    {
+      "name": "heltall for retning",
+      "type": "string"
+    }
+  ],
+  "output": [
+    {
+      "name": "ny matrise 4x4",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "2 0 0 2 \n4 16 8 2 \n2 64 32 4 \n1024 1024 64 0 \n0",
+      "output": "4 0 0 0 \n4 16 8 2 \n2 64 32 4 \n2048 64 0 0"
+    }
+  ]
+}

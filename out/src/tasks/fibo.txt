@@ -1,48 +1,27 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-Fibonacci
-</h1>
-<p>
-author
-</p>
-<p>
-150
-</p>
-</div>
-<div>
-  <h2> Fibonaccitallene </h2>
-  fibonaccitallrekke er definert som summen av de to foregående.
-  Skriv et programm som lager de 100 første tallene.
-</div>
-<div>
-<h2> input </h2>
- Du skal ikke ha noe input til programmet.
-<h2> output </h2>
-  de 100 første tallene i fibonacci-rekka.
-</div>
-<div>
-  <div class="container">
-  <h2> eksempler </h2>
-      <div class="table-responsive">
-      <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>N/A</td>
-          <td>N/A</td>
-        </tr>
-        <tr>
-          <td>N/A</td>
-          <td>N/A</td>
-        </tr>
-      </tbody>
-      </table>
-      </div>
-  </div>
-</div>
+{
+  "_id": 3,
+  "title": "Fibonacci",
+  "points": 150,
+  "taskTeaser": "This is a world. Calculate it!",
+  "taskText": "Fibonaccitallrekke er definert som summen av de to foregående.  Skriv et programm som lager de 100 første tallene.<br /><b> input </b><br /> Du skal ikke ha noe input til programmet.<br /><b> output </b><br />de 100 første tallene i fibonacci-rekka.
+",
+  "input": [
+    {
+      "name": "N/A",
+      "type": ""
+    },
+    {
+      "name": "N/A",
+      "type": ""
+    }
+  ],
+  "output": [
+    {
+      "name": "de første 100 tallene i fibonacci-rekka",
+      "type": "int"
+    },
+  ],
+  "examples": [
+
+  ]
+}

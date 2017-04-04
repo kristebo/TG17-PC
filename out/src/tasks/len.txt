@@ -1,64 +1,34 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-LEN
-</h1>
-<p>
-Kristebo
-</p>
-<p>
-10
-</p>
-</div>
-<div>
-  <h2> Oppgave </h2>
-  Finn den det lengste ordet i en ordliste, ekskluder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.
-</div>
-<div>
-<h2> input </h2>
- en liste med norske ord.
- her er <a href=tomcat.mrow.me/tgpc/api/ord>ordlisten</a>
-<h2> output </h2>
- lengden på det lengste ordet.
-</div>
-<div>
-  <div class="container">
-  <h2> eksempler </h2>
-  <div class="table-responsive">
-      <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-
-          <th><b>OUTPUT</b></th>
-          lengden på det lengste ordet.
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-          <pre>
-          forøkelse
-          fane
-          føye sammen
-          innvending
-          frontrute
-	      </pre>
-          </td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>
-          <pre>
-          arvlighet
-          kokett
-          enstemmighet på kvegfarm
-          </pre>
-          </td>
-          <td>10</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  </div>
-</div>
+{
+  "_id": 2,
+  "title": "LEN",
+  "points": 10,
+  "taskTeaser": "Morsomme ord",
+  "taskText": "Finn den det lengste ordet i en ordliste, ekskluder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.<br /><b> input </b><br /> en liste med norske ord.<br /> her er <a href=tomcat.mrow.me/tgpc/api/ord>ordlisten</a><br /><b> output </b><br />lengden på det lengste ordet.
+",
+  "input": [
+    {
+      "name": "ordliste",
+      "type": "int"
+    }
+  ],
+  "output": [
+    {
+      "name": "antall bokstaver i det lengste ordet",
+      "type": "int"
+    },
+    {
+      "name": "Det lengste ordet",
+      "type": "string"
+    }
+  ],
+  "examples": [
+    {
+      "input": "forøkelse \n fane \n føye sammen \n innvending \nfrontrute \n",
+      "output": "10 innvending"
+    },
+    {
+      "input": "arvlighet \n kokett \n enstemmighet på kvegfarm \n",
+      "output": "12 enstemmighet"
+    }
+  ]
+}

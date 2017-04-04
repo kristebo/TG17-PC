@@ -3,11 +3,6 @@ from functools import wraps
 
 import csv, codecs
 app = Flask(__name__)
-# [
-#          {'number': 1, 'title': title, 'points': points, 'content': contenturl},
-#          {'number': 2, 'title': title, 'points': points, 'content': contenturl}
-# 	   ...
-#          ]
 
 
 tasksdone = open('tasksdone.txt','r') #taskname, partids
@@ -15,7 +10,7 @@ ord=open('ord.txt', 'r')
 csvfile = open('tasks/tasks.txt', 'r')
 rows=[]
 i=0
-fieldnames = ("_id", "title", "teaser", "points", "contenturl")
+fieldnames = ("_id", "title", "teaser", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
 key = '24'
 print reader
@@ -51,11 +46,21 @@ def gettask(taskid):
             return jsonify({'task_content':buffer})
     abort(404)
 
-
+## /tgpc/api/tasks?partid=partid
 @app.route('/tgpc/api/tasks',methods=['GET'])
 @require_appkey
 def get_tasks():
-    return jsonify({'tasks':rows})  #will return the json
+    partid=request.args.get('partid', type=str)
+    rtasks=[]
+    fieldsr=('_id', 'taskname', 'partids')
+    rowstaski=csv.DictReader(taskdone, fieldsr)
+    for rowsi in rowstaksi:
+        rtasks.append(rowsi)
+    taskdone=[]
+    for d in rtasks:
+        if partid in d.get('partids'):
+            taskdone.append(d.get('taskname'))
+    return jsonify({'tasks':rows},{'tasksdone':taskdone})  #will return the json
 
 
 @app.route('/tgpc/api/taskstate/<int:tasknr>/',methods=['GET'])

@@ -1,117 +1,34 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-Stavelser
-</h1>
-<p>
-Kristebo
-</p>
-<p>
-20
-</p>
-</div>
-<div>
-  <h2> Oppgave </h2>
-  Finn det ordet med flest stavelser ordliste.
-  fra SNL:
-  Stavelse, grunnbegrep i språkvitenskapen som defineres ved hjelp av begrepet sonoritet, som betyr klangfullhet eller hørbarhet.
-  I en kjede av språklyder, f.eks. et ord, vil det være veksling i grad av sonoritet, og «sonoritetstoppene», de mest sonore språklydene, danner stavelser ved å utgjøre stavelseskjerner.
-  Ordet sal har bare én sonoritetstopp, og består slik av én stavelse med a som kjerne, mens ordet salami har tre sonoritetstopper (a, a, i) og dermed tre stavelser.
-
-  Det er lettere å identifisere kjernen i en stavelse enn å finne hvor grensen mellom stavelsene skal gå (f.eks. blom-stre, bloms-tre eller blomst-re).
-  Vokalene er de mest sonore språklydene, og derfor er det vanligvis vokaler som er stavelsesbærende, som i eksemplene ovenfor.
-  Men fordi konsonanter også varierer i sonoritet, kan de mest sonore konsonantene (særlig r, l, m, n) være stavelsesbærende i visse tilfeller, f.eks. n i katn (katten) og l i midl (middel).
-  Stavelsen spiller en sentral rolle i nyere fonologisk teori.
-</div>
-</div>
-<div>
-<h2> input </h2>
- en liste med norske ord.
- her er
- <pre>
- ildsted
- bardisk
- interplanetarisk
- glassperle
- kausjon
- kinetikk
- kjørvel
- bestilt
- evnukk
- kikker
- despot
- funn
- kaste maska
- hegemoni
- differensial
- avtrykk
- innebygde fonter
- hensynsløshet
- grensesnitt
- eiendoms
- bestøvning
- foredragsholder
- firling
- bekjent
- kartesiansk
- kameratskap
- fødested
- koriander
- dagpenger
- fjærkledd
- havremel
- glimrende
- florere
- forpint
- gjenoppbygge
- gjenfødelse
- herrer
- gras
- </pre>
-<h2> output </h2>
-
- Finn antall stavelser i ordene. Ignorer de som er delt opp i fler ord, men tell med alle ord i slike setninger likevel.
-</div>
-<div>
-  <div class="container">
-  <h2> eksempler </h2>
-  <div class="table-responsive">
-      <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-          lengden på det lengste ordet.
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-          <pre>
-          forøkelse
-	      </pre>
-          </td>
-          <td>forøkelse 4</td>
-        </tr>
-        <tr>
-          <td>
-          <pre>
-          arvlighet
-          kokett
-          enstemmighet på kvegfarm
-          </pre>
-          </td>
-          <td>
-          <pre>
-          arvlighet 3
-          kokett 2
-          enstemmighet 4
-          på 1
-          kvegfarm 2
-          </pre></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  </div>
-</div>
+{
+  "_id": 7,
+  "title": "stavelser",
+  "points": 110,
+  "taskTeaser": "Vi bruker ord hele tiden, hvorfor suger datamaskiner med dem?",
+  "taskText": "Finn det ordet med flest stavelser ordliste.<br />fra SNL:<br /> <p>Stavelse, grunnbegrep i språkvitenskapen som defineres ved hjelp av begrepet sonoritet, som betyr klangfullhet eller hørbarhet. I en kjede av språklyder, f.eks. et ord, vil det være veksling i grad av sonoritet, og «sonoritetstoppene», de mest sonore språklydene, danner stavelser ved å utgjøre stavelseskjerner. Ordet sal har bare én sonoritetstopp, og består slik av én stavelse med a som kjerne, mens ordet salami har tre sonoritetstopper (a, a, i) og dermed tre stavelser.</p> <p>Det er lettere å identifisere kjernen i en stavelse enn å finne hvor grensen mellom stavelsene skal gå (f.eks. blom-stre, bloms-tre eller blomst-re).  Vokalene er de mest sonore språklydene, og derfor er det vanligvis vokaler som er stavelsesbærende, som i eksemplene ovenfor.  Men fordi konsonanter også varierer i sonoritet, kan de mest sonore konsonantene (særlig r, l, m, n) være stavelsesbærende i visse tilfeller, f.eks. n i katn (katten) og l i midl (middel).  Stavelsen spiller en sentral rolle i nyere fonologisk teori.  <p><br /><b> input </h2><br /> Her er en liste med norske ord. <p> ildsted <br /> bardisk <br /> interplanetarisk <br /> glassperle<br /> kausjon<br /> kinetikk<br /> kjørvel<br /> bestilt<br /> evnukk<br /> kikker<br /> despot<br /> funn<br /> kaste maska<br /> hegemoni<br /> differensial<br /> avtrykk<br /> innebygde fonter<br /> hensynsløshet<br /> grensesnitt<br /> eiendoms<br /> bestøvning<br /> foredragsholder<br /> firling<br /> bekjent<br /> kartesiansk<br /> kameratskap<br /> fødested<br /> koriander<br /> dagpenger<br /> fjærkledd<br /> havremel<br /> glimrende<br /> florere<br /> forpint<br /> gjenoppbygge<br /> gjenfødelse<br /> herrer<br />gras<br /></p><br /><b> output </b><br />Finn antall stavelser i ordene. Ignorer de som er delt opp i fler ord, men tell med alle ord i slike setninger likevel.
+",
+  "input": [
+    {
+      "name": "ord",
+      "type": "string"
+    }
+  ],
+  "output": [
+    {
+      "name": "ord",
+      "type": "string"
+    },
+    {
+      "name": "antall stavelser",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "forøkelse",
+      "output": "forøkelse 4"
+    },
+    {
+      "input": "arvlighet \nkokett \n enstemmighet på kvegfarm \n",
+      "output": "arvlighet 3 \nkokett 2 \nenstemmighet 4 \npå 1 \nkvegfarm 2"
+    }
+  ]
+}

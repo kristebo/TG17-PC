@@ -1,77 +1,26 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-Vigenere crypto
-</h1>
-<p>
-kristebo
-</p>
-<p>
-60
-</p>
-</div>
-<div>
-  <h2> Oppgave </h2>
-  <pre>
-  alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,?-_;:+1234567890"'
+{
+  "_id": 1,
+  "title": "Vignere",
+  "points": 90,
+  "taskTeaser": "Crypto crypto crypto",
+  "taskText": "<p>alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,?-_;:+1234567890"'<br />def vigenere_encode(msg, key):<br />      """<br />      Function that encodes a string with Vigenere cipher. <br />      The encrypted string is returned.<br />      """<br />      secret = ''<br />      key_length = len(key)<br />      alphabet_length = len(alphabet)<br />      for i, char in enumerate(msg):<br />          msgInt = alphabet.find(char)<br />          encInt = alphabet.find(key[i % key_length])<br />          if msgInt == -1 or encInt == -1:<br />              return ''<br />          encoded = (msgInt + encInt) % alphabet_length<br />          secret += alphabet[encoded]<br /><br />      return secret<br />    </p>Jeg trenger en decodefunksjon for vigenere. Kan du lage et program som finner nøkkelen til denne krypterte meldingen:<p>CIe2CORFN,8CFEX1LXV;FG,Q?me:6IBG0 BEH</p> slutt den krypterte meldingen<br /><b> output </b><br /> decryptert melding på første linje, nøkkelen på andre.",
+  "input": [
+    {
+      "name": "CIe2CORFN,8CFEX1LXV;FG,Q?me:6IBG0 BEH",
+      "type": "string"
+    }
+  ],
+  "output": [
+    {
+      "name": "key",
+      "type": "string"
+    },
+    {
+      "name": "dekryptert string",
+      "type": "string"
+    }
+  ],
+  "examples": [
 
-  def vigenere_encode(msg, key):
-      """Function that encodes a string with Vigenere cipher. The encrypted
-         string is returned.
-      """
-      secret = ''
-      key_length = len(key)
-      alphabet_length = len(alphabet)
-
-      for i, char in enumerate(msg):
-          msgInt = alphabet.find(char)
-          encInt = alphabet.find(key[i % key_length])
-
-          if msgInt == -1 or encInt == -1:
-              return ''
-
-          encoded = (msgInt + encInt) % alphabet_length
-          secret += alphabet[encoded]
-
-      return secret
-    <pre>
-    Jeg trenger en decodefunksjon for vigenere. Kan du lage et program som finner nøkkelen til denne krypterte meldingen:
-
-    <pre>
-    CIe2CORFN,8CFEX1LXV;FG,Q?me:6IBG0 BEH
-    </pre>
-</div>
-<div>
-<h2> input </h2>
- den krypterte meldingen
-<h2> output </h2>
- decryptert melding på første linje, nøkkelen på andre.
-</div>
-<div>
-  <div class="container">
-  <h2> eksempler </h2>
-  <div class="table-responsive">
-      <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-          <pre>
-              CIe2CORFN,8CFEX1LXV;FG,Q?me:6IBG0 BEH
-          </pre>
-          </td>
-          <td>
-          [dekrypter melding]
-          [nøkkel]
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  </div>
-</div>
+  ]
+}

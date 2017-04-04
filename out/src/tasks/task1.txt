@@ -1,44 +1,29 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-FENCE!
-</h1>
-<p>
-kristebo
-</p>
-<p>
-10
-</p>
-</div>
-<div>
-  <h2> Oppgave </h2>
-  Du får tildelt et vist antall meter med gjerde.
-  Hva blir det maksimale størrelsen du kan sperre av med dette gjerdet?
-</div>
-<div>
-<h2> input </h2>
-  antall (float) meter med gjerde.
-   <div class="container">
-    <h2> eksempler </h2>
-    <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>214</td>
-          <td>11449</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-  </div>
+{
+  "_id": 1,
+  "title": "FENCE",
+  "points": 10,
+  "taskTeaser": "GJERDE",
+  "taskText": "  Du får tildelt et vist antall meter med gjerde.Hva blir det maksimale størrelsen du kan sperre av med dette gjerdet? <br /><b> input </h2><br /> antall (int) meter med gjerde.<br /><b> output </h2><br /> areal (int) gjerdet inn.",
+  "input": [
+    {
+      "name": "antall meter gjerde",
+      "type": "int"
+    }
+  ],
+  "output": [
+    {
+      "name": "areal",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "2",
+      "output": "1"
+    },
+    {
+      "input": "214",
+      "output": "11449"
+    }
+  ]
+}

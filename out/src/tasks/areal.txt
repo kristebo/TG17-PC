@@ -1,62 +1,35 @@
-<div class="container">
-<div class="jumbotron text-center">
-<h1>
-Areal
-</h1>
-<p>
-kristebo
-</p>
-<p>
-30
-</p>
-</div>
-<div>
-  <h2> Oppgave </h2>
-  En mangekant er en geometrisk form med mange sider. den vi ser på her har n sider.
-  Oppgaven er å lage et program som tilnærmer arealet til en slik geometrisk form
 
-</div>
-<div>
-<h2> input </h2>
- et tall som forteller deg antall vektorer fulgt av dette antallet vektorer.
-<h2> output </h2>
- arealet av formen
-</div>
-<div>
-  <div class="container">
-  <h2> eksempler </h2>
-  <div class="table-responsive">
-      <table class="table">
-      <thead>
-        <tr>
-          <th><b>INPUT</b></th>
-          <th><b>OUTPUT</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><pre>
-          4
-          0 0
-          2 0
-          2 2
-          0 2
-          </pre>
-          </td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td><pre>
-          3
-          0 0
-          2 0
-          2 2
-          </pre>
-          </td>
-          <td>2</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  </div>
-</div>
+
+{
+  "_id": 10,
+  "title": "AREAL",
+  "points": 20,
+  "taskTeaser": "MIN HATT DEN HAR FLER KANTER...",
+  "taskText": "En mangekant er en geometrisk form med mange sider. den vi ser på her har n sider. Oppgaven er å lage et program som tilnærmer arealet til en slik geometrisk form <br /><b> input </h2><br /> et tall som forteller deg antall vektorer fulgt av dette antallet vektorer. <br /><b> output </b><br /> arealet av formen",
+  "input": [
+    {
+      "name": "Antall vektorer",
+      "type": "int"
+    },
+    {
+      "name": "vektorer",
+      "type": "int"
+    }
+  ],
+  "output": [
+    {
+      "name": "arealet",
+      "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "4 \n0 0\n 2 0 \n2 2 \n0 2",
+      "output": "4"
+    },
+    {
+      "input": "3 \n0 0 \n2 0 \n2 2",
+      "output": "2"
+    }
+  ]
+}

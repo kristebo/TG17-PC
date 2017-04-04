@@ -6,10 +6,11 @@ app = Flask(__name__)
 
 
 tasksdone = open('tasksdone.txt','r') #taskname, partids
-ord=open('ord.txt', 'r')
+ord=open('tasks/ord.txt', 'r')
 csvfile = open('tasks/tasks.txt', 'r')
 rows=[]
 i=0
+#4,2048,"et morsomt spill",src/tasks/2048.txt
 fieldnames = ("_id", "title", "teaser", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
 key = '24'
@@ -50,17 +51,20 @@ def gettask(taskid):
 @app.route('/tgpc/api/tasks',methods=['GET'])
 @require_appkey
 def get_tasks():
-    partid=request.args.get('partid', type=str)
+    partid=request.args.get('partid')
     rtasks=[]
+    taskdone=[]
     fieldsr=('_id', 'taskname', 'partids')
     rowstaski=csv.DictReader(taskdone, fieldsr)
-    for rowsi in rowstaksi:
+    for rowsi in rowstaski:
         rtasks.append(rowsi)
-    taskdone=[]
     for d in rtasks:
         if partid in d.get('partids'):
             taskdone.append(d.get('taskname'))
-    return jsonify({'tasks':rows},{'tasksdone':taskdone})  #will return the json
+            return jsonify({{'tasks':rows},{'tasksdone':taskdone}})  #will return the json
+        else:
+            return jsonify({'tasks':rows})
+    return jsonify({'tasks':rows})
 
 
 @app.route('/tgpc/api/taskstate/<int:tasknr>/',methods=['GET'])
@@ -76,7 +80,7 @@ def get_taskstate(tasknr):
     return jsonify({'taskstate':rowstask[tasknr-1]})
 
 
-@app.route('/tgpc/api/parttotal/<str:partid>')
+@app.route('/tgpc/api/parttotal/<partid>')
 @require_appkey
 def get_participant_total(partid):
     #return the sum for this partid and taskids.
@@ -105,11 +109,11 @@ def get_leader_board():
     lb=sorted(participantslist, key=lambda k: int(k['sum']))
     return jsonify({"leaderboard":lb})
 
-## støtte funskjon
-@app.route('tgpc/api/ord')
+## stotte funskjon
+@app.route('/tgpc/api/ord')
 def serveord():
     ordliste=ord.readlines()
-    return ordliste
+    return jsonify({"ord":ordliste})
 
 
 if __name__ == '__main__':

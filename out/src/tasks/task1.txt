@@ -3,7 +3,7 @@
   "title": "FENCE",
   "points": 10,
   "taskTeaser": "GJERDE",
-  "taskText": "  Du får tildelt et vist antall meter med gjerde.Hva blir det maksimale størrelsen du kan sperre av med dette gjerdet? <br /><b> input </h2><br /> antall (int) meter med gjerde.<br /><b> output </h2><br /> areal (int) gjerdet inn.",
+  "taskText": "  Du får tildelt et vist antall meter med gjerde.Hva blir det maksimale størrelsen du kan sperre av med dette gjerdet? <br /><b> input </b><br /> antall (int) meter med gjerde.<br /><b> output </b><br /> areal (int) gjerdet inn.",
   "input": [
     {
       "name": "antall meter gjerde",

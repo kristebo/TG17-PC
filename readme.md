@@ -41,17 +41,17 @@ solution \<str\>
 ## all the other:
 - /
 returns "glalalla"
-- /tgpc/api/gettask/\<int:taskid\>/
+- /tgpc/api/gettask/\<int:taskid\>/\n
 returns taskids content as json.
-- /tgpc/api/tasks/
+- /tgpc/api/tasks/\n
 All the tasks as tasks: taskid, name and path
-- /tgpc/api/taskstate/\<int:tasknr\>/
+- /tgpc/api/taskstate/\<int:tasknr\>/\n
 state of tasknr
-- /tgpc/api/parttotal/\<partid\>
+- /tgpc/api/parttotal/\<partid\>\n
 returns partname and sum
-- /tgpc/api/leaderboard
+- /tgpc/api/leaderboard\n
 yeah!
-- /tgpc/api/ord
+- /tgpc/api/ord \n
 10k lines lines of words
 
 

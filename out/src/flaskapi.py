@@ -1,5 +1,6 @@
 from flask import Flask, json, jsonify, Response, request, abort
 from functools import wraps
+import os
 
 import csv, codecs
 app = Flask(__name__)
@@ -71,34 +72,45 @@ def get_taskstate(tasknr):
         rowstask.append(row)
     return jsonify({'taskstate':rowstask[tasknr-1]}) #repr(rowstask[tasknr-1])
 
+#@app.route('/tgpc/api/parttotal/<partid>')
+#@require_appkey
+#def get_participant_total(partid):
+#    #return the sum for this partid and taskids.
+#    #partid, sum
+#    #read rows in participants.txt
+#    participantslist=[]
+#    fields=("partid", "sum")
+#    rowsparts=csv.DictReader(participants, fields)
+#    for row in rowsparts:
+#        participantslist.append(row)
+#    for p in participantslist:
+#        #print p
+#        if p.get('partid')==partid:
+#            return jsonify({'participant':p}) # p
+#    return -
 
-@app.route('/tgpc/api/parttotal/<partid>')
+@app.route('/tgpc/api/deliver', methods=['POST'])
 @require_appkey
-def get_participant_total(partid):
-    #return the sum for this partid and taskids.
-    #partid, sum
-    #read rows in participants.txt
-    participantslist=[]
-    fields=("partid", "sum")
-    rowsparts=csv.DictReader(participants, fields)
-    for row in rowsparts:
-        participantslist.append(row)
-    for p in participantslist:
-        #print p
-        if p.get('partid')==partid:
-            return jsonify({'participant':p}) # p
-    return -
-
-
-## TODO: post methods!
-@app.route('tgpc/api/deliver/<taskid>',methods=['GET', 'POST'])
-@require_appkey
-def in_request():
-def add_message(taskid):
+def deliver():
     content = request.json
-    print content
-    return uuid
+    print content['partid']
+    print "uploads/"+content['partname']+"/"+content['partid']
+    if not os.path.isdir("uploads/"+content['partname']):
+        os.mkdir("uploads/"+content['partname'])
 
+    with open("uploads/"+content['partname']+"/"+content['partid'], 'w') as file:
+        file.write(content['solution'])
+    return jsonify({'state':'good'})
+
+
+### TODO: post methods!
+#@app.route('tgpc/api/deliver/<taskid>',methods=['GET', 'POST'])
+#@require_appkey
+#def in_request():
+#def add_message(taskid):
+#    content = request.json
+#    print content
+#    return uuid
 
 if __name__ == '__main__':
     app.run()

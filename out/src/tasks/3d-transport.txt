@@ -3,8 +3,7 @@
   "title": "Tuneller",
   "points": 100,
   "taskTeaser": "Magisk transportsystem",
-  "taskText": "  I vikingskipet er det mange mennesker og det er langt mellom rader og folk. <br />Men nytt for i år er at vi kan teleportere fra sted til hvor som helst i hallen.<br /><br />Dette er selvfølgelig ikke gratis og kosten er for å sette opp transportstasjoner og koble dem opp ved min(|x_a-x_b|,|y_a-y_b|,|z_a-z_b|)<br /><br />Skriv et program som finner den minimale kosten for alle stasjonene som settes opp.<br /><b> input </b><br />det første tallet er antall transportstasjoner.<br /><b> output </b><br />Den totale kosten for alle stasjone på en linje.
-",
+  "taskText": "  I vikingskipet er det mange mennesker og det er langt mellom rader og folk. <br />Men nytt for i år er at vi kan teleportere fra sted til hvor som helst i hallen.<br /><br />Dette er selvfølgelig ikke gratis og kosten er for å sette opp transportstasjoner og koble dem opp ved min(|x_a-x_b|,|y_a-y_b|,|z_a-z_b|)<br /><br />Skriv et program som finner den minimale kosten for alle stasjonene som settes opp.<br /><b> input </b><br />det første tallet er antall transportstasjoner.<br /><b> output </b><br />Den totale kosten for alle stasjone på en linje.",
   "input": [
     {
       "name": "antall stasjoner",

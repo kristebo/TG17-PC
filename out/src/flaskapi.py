@@ -43,11 +43,11 @@ def make_hello():
 def gettask(taskid):
     for row in rows:
         if int(row["_id"]) == taskid:
-            buffer = ""
-            with open(row["contenturl"]) as fd:
-                buffer = fd.readlines()
-
-            return jsonify({'task_content':buffer})
+            jsondata=""
+            jsondata=json.load(open(row["contenturl"]))
+            for key in jsondata:
+                print jsondata.get(key)
+            return jsonify({"taskcontent":jsondata})
     abort(404)
 
 ## /tgpc/api/tasks?partid=partid

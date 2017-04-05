@@ -93,8 +93,6 @@ def get_taskstate(tasknr):
 @require_appkey
 def deliver():
     content = request.json
-    print content['partid']
-    print "uploads/"+content['partname']+"/"+content['partid']
     if not os.path.isdir("uploads/"+content['partname']):
         os.mkdir("uploads/"+content['partname'])
 

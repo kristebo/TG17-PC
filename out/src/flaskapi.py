@@ -90,10 +90,7 @@ def get_participant_total(partid):
     #return the sum for this partid and taskids.
     #partid, sum
     #read rows in participants.txt
-    participants = open('participants.txt','r')
-    participantslist=[]
-    fields=("partid","partname" ,"sum")
-    rowsparts=csv.DictReader(participants, fields)
+    rowsparts=getDictReader()
     for row in rowsparts:
         participantslist.append(row)
     for p in participantslist:
@@ -105,14 +102,18 @@ def get_participant_total(partid):
 @app.route('/tgpc/api/leaderboard')
 @require_appkey
 def get_leader_board():
-    participants = open('participants.txt','r')
-    participantslist=[]
-    fields=("partid","partname","sum")
-    participantsDict=csv.DictReader(participants, fields)
+    participantsDict=getDictReader()
     for row in participantsDict:
         participantslist.append(row)
     lb=sorted(participantslist, key=lambda k: int(k['sum']),reverse=True)
     return jsonify({"leaderboard":lb})
+
+def getDictReader():
+    participants = open('participants.txt','r')
+    participantslist=[]
+    fields=("partid","partname","sum")
+    return csv.DictReader(participants, fields)
+
 
 ## stotte funskjon
 @app.route('/tgpc/api/ord')

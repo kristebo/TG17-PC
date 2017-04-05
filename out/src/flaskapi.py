@@ -21,6 +21,13 @@ print reader
 for row in reader:
     rows.append(row)
 
+@app.before_first_request
+def setup_logging():
+    if not app.debug:
+        # In production mode, add log handler to sys.stderr.
+        app.logger.addHandler(logging.StreamHandler())
+        app.logger.setLevel(logging.INFO)
+
 # For having a key. Do host:5000/path/here?key=24
 def require_appkey(view_function):
     @wraps(view_function)
@@ -116,11 +123,14 @@ def serveord():
     ordliste=ord.readlines()
     return Response(ordliste)
 
-@app.route('/api/add_delivery/<taskid>', methods=['GET', 'POST'])
+@app.route('/tgpc/api/add_delivery/<taskid>', methods=['GET', 'POST'])
+@require_appkey
 def add_message(taskid):
     content = request.json
     fn= open(taskid+content.get('partid')+'.txt', 'w')
     fn.write(content.get('solution'))
+    app.logger.info("Solution" + fn.filename + " delivered" )
+
     fn.close
     return jsonify({"filename":fn.filename})
 

@@ -33,6 +33,7 @@ endpoints return these as json:
 # endpoinst
 ## delivery 
 post request /tgpc/api/deliver
+
 content: 
 partname \<str\>
 partid \<int\>
@@ -41,17 +42,23 @@ solution \<str\>
 ## all the other:
 - /
 returns "glalalla"
-- /tgpc/api/gettask/\<int:taskid\>/\n
+- /tgpc/api/gettask/\<int:taskid\>/
+
 returns taskids content as json.
-- /tgpc/api/tasks/\n
+- /tgpc/api/tasks/
+
 All the tasks as tasks: taskid, name and path
-- /tgpc/api/taskstate/\<int:tasknr\>/\n
+- /tgpc/api/taskstate/\<int:tasknr\>/
+
 state of tasknr
-- /tgpc/api/parttotal/\<partid\>\n
+- /tgpc/api/parttotal/\<partid\>
+
 returns partname and sum
-- /tgpc/api/leaderboard\n
+- /tgpc/api/leaderboard
+
 yeah!
-- /tgpc/api/ord \n
+- /tgpc/api/ord 
+
 10k lines lines of words
 
 

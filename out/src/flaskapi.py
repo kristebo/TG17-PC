@@ -123,16 +123,16 @@ def serveord():
     ordliste=ord.readlines()
     return Response(ordliste)
 
-@app.route('/tgpc/api/add_delivery/<taskid>', methods=['GET', 'POST'])
+@app.route('/tgpc/api/deliver', methods=['GET','POST'])
 @require_appkey
-def add_message(taskid):
+def deliver():
     content = request.json
-    fn= open(taskid+content.get('partid')+'.txt', 'w')
-    fn.write(content.get('solution'))
-    app.logger.info("Solution" + fn.filename + " delivered" )
+    if not os.path.isdir("uploads/"+content['partname']):
+        os.mkdir("uploads/"+content['partname'])
 
-    fn.close
-    return jsonify({"filename":fn.filename})
+    with open("uploads/"+content['partname']+"/"+content['partid'], 'w') as file:
+        file.write(content['solution'])
+return jsonify({'state':'good'})
 
 
 if __name__ == '__main__':

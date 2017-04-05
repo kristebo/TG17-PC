@@ -46,7 +46,7 @@ def gettask(taskid):
         if int(row["_id"]) == taskid:
             jsondata=""
             jsondata=json.load(open(row["contenturl"]))
-            
+
             return jsonify({"taskcontent":jsondata})
     abort(404)
 
@@ -111,21 +111,21 @@ def getpartlist():
     return participantslist
 
 ## stotte funskjon
-@app.route('/tgpc/api/ord')
+@app.route('/tgpc/api/ord', methods=['GET'])
 def serveord():
     ordliste=ord.readlines()
     return Response(ordliste)
 
-@app.route('/tgpc/api/deliver', methods=['GET','POST'])
+@app.route('/tgpc/api/deliver/<int:taskid>', methods=['GET','POST'])
 @require_appkey
 def deliver():
     content = request.json
-    if not os.path.isdir("uploads/"+content['partname']):
-        os.mkdir("uploads/"+content['partname'])
+    if not os.path.isdir("uploads/"+content['partname']+"_"+taskid):
+        os.mkdir("uploads/"+content['partname']+"_"+taskid)
 
-    with open("uploads/"+content['partname']+"/"+content['partid'], 'w') as file:
+    with open("uploads/"+content['partname']+"_"+taskid+"/"+content['partid'], 'w') as file:
         file.write(content['solution'])
-return jsonify({'state':'good'})
+    return jsonify({'state':'good'})
 
 
 if __name__ == '__main__':

@@ -1,3 +1,5 @@
+
+# -*- coding: utf-8 -*-
 from flask import Flask, json, jsonify, Response, request, abort
 from functools import wraps
 
@@ -5,9 +7,9 @@ import csv, codecs
 app = Flask(__name__)
 
 
-tasksdone = open('tasksdone.txt','r') #taskname, partids
-ord=open('tasks/ord.txt', 'r')
-csvfile = open('tasks/tasks.txt', 'r')
+tasksdone = open('tasksdone.txt','rbU') #taskname, partids
+ord=open('tasks/ord.txt', 'rbU')
+csvfile =open('tasks/tasks.txt', 'rbU')
 rows=[]
 i=0
 #4,2048,"et morsomt spill",src/tasks/2048.txt
@@ -48,22 +50,23 @@ def gettask(taskid):
     abort(404)
 
 ## /tgpc/api/tasks?partid=partid
-@app.route('/tgpc/api/tasks',methods=['GET'])
+@app.route('/tgpc/api/tasks/',methods=['GET'])
 @require_appkey
 def get_tasks():
     partid=request.args.get('partid')
     rtasks=[]
     taskdone=[]
     fieldsr=('_id', 'taskname', 'partids')
+    print partid
     rowstaski=csv.DictReader(taskdone, fieldsr)
     for rowsi in rowstaski:
         rtasks.append(rowsi)
     for d in rtasks:
         if partid in d.get('partids'):
-            taskdone.append(d.get('taskname'))
-            return jsonify({{'tasks':rows},{'tasksdone':taskdone}})  #will return the json
-        else:
-            return jsonify({'tasks':rows})
+            print partid
+            taskdone.append(d)
+            print partid
+            return jsonify({'tasksdone':taskdone})  #will return the json
     return jsonify({'tasks':rows})
 
 
@@ -106,7 +109,7 @@ def get_leader_board():
     participantsDict=csv.DictReader(participants, fields)
     for row in participantsDict:
         participantslist.append(row)
-    lb=sorted(participantslist, key=lambda k: int(k['sum']))
+    lb=sorted(participantslist, key=lambda k: int(k['sum']),reverse=True)
     return jsonify({"leaderboard":lb})
 
 ## stotte funskjon

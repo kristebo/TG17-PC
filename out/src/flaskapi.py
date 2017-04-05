@@ -87,12 +87,7 @@ def get_taskstate(tasknr):
 @app.route('/tgpc/api/parttotal/<partid>')
 @require_appkey
 def get_participant_total(partid):
-    #return the sum for this partid and taskids.
-    #partid, sum
-    #read rows in participants.txt
-    rowsparts=getDictReader()
-    for row in rowsparts:
-        participantslist.append(row)
+    participantslist=getpartlist()
     for p in participantslist:
         if p.get('partid')==partid:
             return jsonify({'participant':p})
@@ -102,18 +97,18 @@ def get_participant_total(partid):
 @app.route('/tgpc/api/leaderboard')
 @require_appkey
 def get_leader_board():
-    participantsDict=getDictReader()
-    for row in participantsDict:
-        participantslist.append(row)
+    participantslist=getpartlist()
     lb=sorted(participantslist, key=lambda k: int(k['sum']),reverse=True)
     return jsonify({"leaderboard":lb})
 
-def getDictReader():
+def getpartlist():
     participants = open('participants.txt','r')
     participantslist=[]
     fields=("partid","partname","sum")
-    return csv.DictReader(participants, fields)
-
+    participantsDict=csv.DictReader(participants, fields)
+    for row in participantsDict:
+        participantslist.append(row)
+    return participantslist
 
 ## stotte funskjon
 @app.route('/tgpc/api/ord')

@@ -116,6 +116,14 @@ def serveord():
     ordliste=ord.readlines()
     return Response(ordliste)
 
+@app.route('/api/add_delivery/<taskid>', methods=['GET', 'POST'])
+def add_message(taskid):
+    content = request.json
+    fn= open(taskid+content.get('partid')+'.txt', 'w')
+    fn.write(content.get('solution'))
+    fn.close
+    return jsonify({"filename":fn.filename})
+
 
 if __name__ == '__main__':
     app.run()

@@ -16,13 +16,8 @@ title of the task
 # taskcontentpath
 en fil med beskrivelsen av oppgaven
 
-# text
-+ HTML without:
-  - \<html\>
-  - \<head\>
-  - \<body\>
-  - \<script\>-tags.
-+ bootstrap3 formatting-classes
+# task content returned as json-objects:
+
 
 # JSON
 endpoints return these as json:
@@ -35,9 +30,31 @@ endpoints return these as json:
 - __taskstate__ - 
   a list of the participants that has done that task
 
-# delivery will be on a own page.
-  delivery of one file partid (username) and taskid (int) must be set.
+# endpoinst
+## delivery 
+post request /tgpc/api/deliver
+content: 
+partname \<str\>
+partid \<int\>
+solution \<str\>
+
+## all the other:
+- /
+returns "glalalla"
+- /tgpc/api/gettask/\<int:taskid\>/
+returns taskids content as json.
+- /tgpc/api/tasks/
+All the tasks as tasks: taskid, name and path
+- /tgpc/api/taskstate/\<int:tasknr\>/
+state of tasknr
+- /tgpc/api/parttotal/\<partid\>
+returns partname and sum
+- /tgpc/api/leaderboard
+yeah!
+- /tgpc/api/ord
+10k lines lines of words
+
+
+
   
-# if needed  
-Delivery through Dropbox -> use the username from geekevents. (private browser if needed)
 

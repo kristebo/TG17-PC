@@ -10,6 +10,7 @@ app = Flask(__name__)
 tasksdone = open('tasksdone.txt','rbU') #taskname, partids
 ord=open('tasks/ord.txt', 'rbU')
 csvfile =open('tasks/tasks.txt', 'rbU')
+
 rows=[]
 i=0
 #4,2048,"et morsomt spill",src/tasks/2048.txt
@@ -89,8 +90,9 @@ def get_participant_total(partid):
     #return the sum for this partid and taskids.
     #partid, sum
     #read rows in participants.txt
+    participants = open('participants.txt','r')
     participantslist=[]
-    fields=("partid", "sum")
+    fields=("partid","partname" ,"sum")
     rowsparts=csv.DictReader(participants, fields)
     for row in rowsparts:
         participantslist.append(row)

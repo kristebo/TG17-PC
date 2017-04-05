@@ -116,7 +116,7 @@ def get_leader_board():
 @app.route('/tgpc/api/ord')
 def serveord():
     ordliste=ord.readlines()
-    return jsonify({"ord":ordliste})
+    return Response(ordliste)
 
 
 if __name__ == '__main__':

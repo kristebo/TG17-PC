@@ -21,12 +21,6 @@ print reader
 for row in reader:
     rows.append(row)
 
-@app.before_first_request
-def setup_logging():
-    if not app.debug:
-        # In production mode, add log handler to sys.stderr.
-        app.logger.addHandler(logging.StreamHandler())
-        app.logger.setLevel(logging.INFO)
 
 # For having a key. Do host:5000/path/here?key=24
 def require_appkey(view_function):
@@ -52,8 +46,7 @@ def gettask(taskid):
         if int(row["_id"]) == taskid:
             jsondata=""
             jsondata=json.load(open(row["contenturl"]))
-            for key in jsondata:
-                print jsondata.get(key)
+            
             return jsonify({"taskcontent":jsondata})
     abort(404)
 

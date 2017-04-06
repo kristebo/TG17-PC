@@ -139,7 +139,8 @@ def deliver(taskid):
 @require_appkey
 def getdeliveries(partid):
     fieldnames=['taskid', 'state']
-    tasks=csv.DictReader("uploads/"+str(partid)+"/deliverd.txt")
+    delifile= open("uploads/"+str(partid)+"/deliverd.txt", 'r')
+    tasks=csv.DictReader(delifile, fields)
     taskspart=[]
     for row in tasks:
         taskspart.append(row)

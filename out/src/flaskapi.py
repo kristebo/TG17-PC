@@ -124,23 +124,26 @@ def deliver(taskid):
     if not os.path.isdir("uploads/"+content['partid']):
         os.mkdir("uploads/"+content['partid'])
         with open("uploads/participants.txt", 'a') as file:
-            file.write(content['partid']+","+content['partname'],+"0\n")
+            file.write(content['partid']+","+content['partname']+"0\n")
+
     if not os.path.exists("uploads/"+content['partid']+"/"+str(taskid)):
         with open("uploads/"+content['partid']+"/deliverd.txt", 'a+') as file:
             file.write(str(taskid)+", 0\n")
+
     with open("uploads/"+content['partid']+"/"+str(taskid), 'w') as file:
         file.write(content['solution'])
+
     return jsonify({'state':'good'})
 
 @app.route('/tgpc/api/deliveries/<int:partid>', methods=['GET'])
 @require_appkey
 def getdeliveries(partid):
-    fieldnames=[taskid, state]
-    tasks=csv.DictReader("uploads/"+partid+"/deliverd.txt")
+    fieldnames=['taskid', 'state']
+    tasks=csv.DictReader("uploads/"+str(partid)+"/deliverd.txt")
     taskspart=[]
     for row in tasks:
         taskspart.append(row)
-    return jsonify("taskspart":taskspart)
+    return jsonify({"taskspart":taskspart})
 
 
 

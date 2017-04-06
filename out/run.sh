@@ -8,4 +8,4 @@ if [ "$running" != "" ]; then
     docker rm flaskapiout
 fi
 
-docker run --name="flaskapiout" -d -p 4900:4900 -i tgpc/flaskapiout gunicorn --bind 0.0.0.0:4900 --pythonpath /usr/src/ wsgi:app
+docker run --name="flaskapiout" -d -p 4900:4900 -v $PWD/src/uploads:/usr/src/app/uploads -i tgpc/flaskapiout gunicorn --bind 0.0.0.0:4900 --pythonpath /usr/src/ wsgi:app

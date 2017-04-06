@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, json, jsonify, Response, request, abort
 from functools import wraps
+import os
 
 import csv, codecs
 app = Flask(__name__)
@@ -118,13 +119,20 @@ def serveord():
 
 @app.route('/tgpc/api/deliver/<int:taskid>', methods=['GET','POST'])
 @require_appkey
-def deliver():
+def deliver(taskid):
     content = request.json
-    if not os.path.isdir("uploads/"+content['partname']+"_"+taskid):
-        os.mkdir("uploads/"+content['partname']+"_"+taskid)
+    if not os.path.isdir("uploads/"+content['partname']):
+        os.mkdir("uploads/"+content['partname'])
+        with open("uploads/participants.txt", 'a') as file:
+            file.write(content['partid']+","+content['partname'])
 
-    with open("uploads/"+content['partname']+"_"+taskid+"/"+content['partid'], 'w') as file:
+    if not os.path.exists("uploads/"+content['partname']+"/"+str(taskid)):
+        with open("uploads/"+content['partname']+"/deliverd.txt", 'a+') as file:
+            file.write(str(taskid)+", 0\n")
+
+    with open("uploads/"+content['partname']+"/"+str(taskid), 'w') as file:
         file.write(content['solution'])
+
     return jsonify({'state':'good'})
 
 

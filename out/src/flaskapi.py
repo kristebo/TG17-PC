@@ -124,7 +124,7 @@ def deliver(taskid):
     if not os.path.isdir("uploads/"+content['partname']):
         os.mkdir("uploads/"+content['partname'])
         with open("uploads/participants.txt", 'a') as file:
-            file.write(content['partid']+","+content['partname'])
+            file.write(content['partid']+","+content['partname']+"\n")
 
     if not os.path.exists("uploads/"+content['partname']+"/"+str(taskid)):
         with open("uploads/"+content['partname']+"/deliverd.txt", 'a+') as file:

@@ -103,7 +103,7 @@ def get_leader_board():
     return jsonify({"leaderboard":lb})
 
 def getpartlist():
-    participants = open('participants.txt','r')
+    participants = open('uploads/participants.txt','r')
     participantslist=[]
     fields=("partid","partname","sum")
     participantsDict=csv.DictReader(participants, fields)
@@ -121,19 +121,27 @@ def serveord():
 @require_appkey
 def deliver(taskid):
     content = request.json
-    if not os.path.isdir("uploads/"+content['partname']):
-        os.mkdir("uploads/"+content['partname'])
+    if not os.path.isdir("uploads/"+content['partid']):
+        os.mkdir("uploads/"+content['partid'])
         with open("uploads/participants.txt", 'a') as file:
-            file.write(content['partid']+","+content['partname']+"\n")
-
-    if not os.path.exists("uploads/"+content['partname']+"/"+str(taskid)):
-        with open("uploads/"+content['partname']+"/deliverd.txt", 'a+') as file:
+            file.write(content['partid']+","+content['partname'],+"0\n")
+    if not os.path.exists("uploads/"+content['partid']+"/"+str(taskid)):
+        with open("uploads/"+content['partid']+"/deliverd.txt", 'a+') as file:
             file.write(str(taskid)+", 0\n")
-
-    with open("uploads/"+content['partname']+"/"+str(taskid), 'w') as file:
+    with open("uploads/"+content['partid']+"/"+str(taskid), 'w') as file:
         file.write(content['solution'])
-
     return jsonify({'state':'good'})
+
+@app.route('/tgpc/api/deliveries/<int:partid>', methods=['GET'])
+@require_appkey
+def getdeliveries(partid):
+    fieldnames=[taskid, state]
+    tasks=csv.DictReader("uploads/"+partid+"/deliverd.txt")
+    taskspart=[]
+    for row in tasks:
+        taskspart.append(row)
+    return jsonify("taskspart":taskspart)
+
 
 
 if __name__ == '__main__':

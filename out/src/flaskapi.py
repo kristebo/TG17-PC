@@ -17,7 +17,7 @@ i=0
 #4,2048,"et morsomt spill",src/tasks/2048.txt
 fieldnames = ("_id", "title", "teaser", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
-key = '24'
+key = '590787712188'
 print reader
 for row in reader:
     rows.append(row)
@@ -140,7 +140,7 @@ def deliver(taskid):
 def getdeliveries(partid):
     fieldnames=['taskid', 'state']
     delifile= open("uploads/"+str(partid)+"/deliverd.txt", 'r')
-    tasks=csv.DictReader(delifile, fields)
+    tasks=csv.DictReader(delifile, fieldnames)
     taskspart=[]
     for row in tasks:
         taskspart.append(row)

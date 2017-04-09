@@ -72,17 +72,18 @@ def get_tasks():
     return jsonify({'tasks':rows})
 
 
-@app.route('/tgpc/api/taskstate/<int:tasknr>/',methods=['GET'])
+@app.route('/tgpc/api/taskstate/<int:partid>/',methods=['GET'])
 @require_appkey
-def get_taskstate(tasknr):
+def get_taskstate(partid):
     #return the praticipants that have done this task and succeeded.
     # _id, [partids]
-    rowstask=[]
-    fieldst=("taskname", "participants")
-    rowstaskt=csv.DictReader(tasksdone, fieldst)
-    for row in rowstaskt:
-        rowstask.append(row)
-    return jsonify({'taskstate':rowstask[tasknr-1]})
+    statuslist = []
+    f = open("uploads/"+str(partid)+"/deliverd.txt", 'r')
+    fields = ("task", "status")
+    status_dict = csv.DictReader(f, fields)
+    for row in status_dict:
+        statuslist.append(row)
+    return jsonify({'taskstate':statuslist})
 
 
 @app.route('/tgpc/api/parttotal/<partid>')

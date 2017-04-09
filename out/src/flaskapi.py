@@ -130,7 +130,7 @@ def deliver(taskid):
 
     if not os.path.exists("uploads/"+content['partid']+"/"+str(taskid)):
         with open("uploads/"+content['partid']+"/deliverd.txt", 'a+') as file:
-            file.write(str(taskid)+", 0\n")
+            file.write(str(taskid)+",0\n")
 
     with open("uploads/"+content['partid']+"/"+str(taskid), 'w') as file:
         file.write(content['solution'])

@@ -15,7 +15,7 @@ csvfile =open('tasks/tasks.txt', 'rbU')
 rows=[]
 i=0
 #4,2048,"et morsomt spill",src/tasks/2048.txt
-fieldnames = ("_id", "title", "teaser", "contenturl")
+fieldnames = ("_id", "title", "sum", "teaser", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
 key = '590787712188'
 print reader

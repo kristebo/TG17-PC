@@ -1,14 +1,14 @@
-1,FENCE,"Hva kan du gjøre med et gjerde?",tasks/task1.txt
-2,len,"Hvor lange ord finnes det",tasks/len.txt
-3,fibonacci,"lek med en tallrekke",tasks/fibo.txt
-4,2048,"et morsomt spill",tasks/2048.txt
-5,numbers,"primtall er rare dyr",tasks/numbers.txt
-6,3d-transport,"NP-komplett? Hva er det? No Problem!",tasks/3d-transport.txt
-7,stavelser,"Det er skikkelig vanskelig med språk, spesielt lyder",tasks/stavelser.txt
-8,irational,"brøker",tasks/irational.txt
-9,cryptocrypto,"kan du kryptering?",tasks/vigenere.txt
-10,areal,"rare former, store areal",tasks/areal.txt
-11,day of year,"Det er mange dager i et år",tasks/day_of_year.txt
-12,cows,"Grådige kuer",tasks/cows.txt
-13,automata,"Workshop: cellulær automat",tasks/automata.txt
-14,Labyrint,"finn den flotteste veien gjennom en labyrint",tasks/labyrint.txt
+1,FENCE,10,"Hva kan du gjøre med et gjerde?",tasks/task1.txt
+2,len,10,"Hvor lange ord finnes det",tasks/len.txt
+3,fibonacci,150,"lek med en tallrekke",tasks/fibo.txt
+4,2048,60,"et morsomt spill",tasks/2048.txt
+5,numbers,120,"primtall er rare dyr",tasks/numbers.txt
+6,3d-transport,100,"NP-komplett? Hva er det? No Problem!",tasks/3d-transport.txt
+7,stavelser,110,"Det er skikkelig vanskelig med språk, spesielt lyder",tasks/stavelser.txt
+8,irational,50,"brøker",tasks/irational.txt
+9,cryptocrypto,90,"kan du kryptering?",tasks/vigenere.txt
+10,areal,20,"rare former, store areal",tasks/areal.txt
+11,day of year,50,"Det er mange dager i et år",tasks/day_of_year.txt
+12,cows,20,"Grådige kuer",tasks/cows.txt
+13,automata,100,"Workshop: cellulær automat",tasks/automata.txt
+14,Labyrint,90,"finn den flotteste veien gjennom en labyrint",tasks/labyrint.txt

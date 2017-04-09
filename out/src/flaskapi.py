@@ -99,7 +99,7 @@ def get_participant_total(partid):
 @require_appkey
 def get_leader_board():
     participantslist=getpartlist()
-    lb=sorted(participantslist, key=lambda k: int(k['sum']),reverse=True)
+    lb=sorted(participantslist, key=lambda k: k['sum'],reverse=True)
     return jsonify({"leaderboard":lb})
 
 def getpartlist():

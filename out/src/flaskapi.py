@@ -81,9 +81,10 @@ def get_taskstate(partid):
     f = open("uploads/"+str(partid)+"/deliverd.txt", 'r')
     fields = ("task", "status")
     status_dict = csv.DictReader(f, fields)
-    f.close()
+    print status_dict
     for row in status_dict:
         statuslist.append(row)
+    f.close()
     return jsonify({'taskstate':statuslist})
 
 
@@ -143,10 +144,10 @@ def getdeliveries(partid):
     fieldnames=['taskid', 'state']
     delifile= open("uploads/"+str(partid)+"/deliverd.txt", 'r')
     tasks=csv.DictReader(delifile, fieldnames)
-    delifile.close()
     taskspart=[]
     for row in tasks:
         taskspart.append(row)
+    delifile.close()
     return jsonify({"taskspart":taskspart})
 
 

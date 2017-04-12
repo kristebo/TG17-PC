@@ -1,8 +1,10 @@
-
 # -*- coding: utf-8 -*-
 from flask import Flask, json, jsonify, Response, request, abort
 from functools import wraps
-import os
+from tempfile import mkstemp
+from shutil import move
+from os import close, remove
+import os, requests
 
 import csv, codecs
 app = Flask(__name__)
@@ -135,6 +137,27 @@ def deliver(taskid):
 
     with open("uploads/"+content['partid']+"/"+str(taskid), 'w') as file:
         file.write(content['solution'])
+
+    res = requests.post('http://localhost:5000/tgpc/check/'+str("uploads/"+content['partid']+"/"+str(taskid)+content['lang'])+'?key=123')
+
+    statuses = []
+    with open("uploads/"+content['partid']+"/deliverd.txt", 'r') as file:
+        statuses = file.readlines()
+    
+    for i, j in enumerate(statuses):
+        if str(taskid)+"," in j:
+            statuses[i] = str(taskid)+","+res.text
+
+    fh, abs_path = mkstemp()
+    with open(abs_path,'w') as new_file:
+        for i in statuses:
+            new_file.write("%s" % i);
+    
+    close(fh)
+    #Remove original file
+    remove("uploads/"+content['partid']+"/deliverd.txt")
+    #Move new file
+    move(abs_path, "uploads/"+content['partid']+"/deliverd.txt")
 
     return jsonify({'state':'good'})
 

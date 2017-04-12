@@ -15,9 +15,9 @@ csvfile =open('tasks/tasks.txt', 'rbU')
 rows=[]
 i=0
 #4,2048,"et morsomt spill",src/tasks/2048.txt
-fieldnames = ("_id", "title", "teaser", "contenturl")
+fieldnames = ("_id", "title", "sum", "teaser", "contenturl")
 reader = csv.DictReader(csvfile, fieldnames)
-key = '24'
+key = '590787712188'
 print reader
 for row in reader:
     rows.append(row)
@@ -72,17 +72,20 @@ def get_tasks():
     return jsonify({'tasks':rows})
 
 
-@app.route('/tgpc/api/taskstate/<int:tasknr>/',methods=['GET'])
+@app.route('/tgpc/api/taskstate/<int:partid>/',methods=['GET'])
 @require_appkey
-def get_taskstate(tasknr):
+def get_taskstate(partid):
     #return the praticipants that have done this task and succeeded.
     # _id, [partids]
-    rowstask=[]
-    fieldst=("taskname", "participants")
-    rowstaskt=csv.DictReader(tasksdone, fieldst)
-    for row in rowstaskt:
-        rowstask.append(row)
-    return jsonify({'taskstate':rowstask[tasknr-1]})
+    statuslist = []
+    f = open("uploads/"+str(partid)+"/deliverd.txt", 'r')
+    fields = ("task", "status")
+    status_dict = csv.DictReader(f, fields)
+    print status_dict
+    for row in status_dict:
+        statuslist.append(row)
+    f.close()
+    return jsonify({'taskstate':statuslist})
 
 
 @app.route('/tgpc/api/parttotal/<partid>')
@@ -99,7 +102,7 @@ def get_participant_total(partid):
 @require_appkey
 def get_leader_board():
     participantslist=getpartlist()
-    lb=sorted(participantslist, key=lambda k: int(k['sum']),reverse=True)
+    lb=sorted(participantslist, key=lambda k: k['sum'],reverse=True)
     return jsonify({"leaderboard":lb})
 
 def getpartlist():
@@ -124,13 +127,13 @@ def deliver(taskid):
     if not os.path.isdir("uploads/"+content['partid']):
         os.mkdir("uploads/"+content['partid'])
         with open("uploads/participants.txt", 'a') as file:
-            file.write(content['partid']+","+content['partname']+"0\n")
+            file.write(content['partid']+","+content['partname']+",0\n")
 
     if not os.path.exists("uploads/"+content['partid']+"/"+str(taskid)):
         with open("uploads/"+content['partid']+"/deliverd.txt", 'a+') as file:
-            file.write(str(taskid)+", 0\n")
+            file.write(str(taskid)+",0\n")
 
-    with open("uploads/"+content['partid']+"/"+str(taskid), 'w') as file:
+    with open("uploads/"+content['partid']+"/"+str(taskid)+content['lang'], 'w') as file:
         file.write(content['solution'])
 
     return jsonify({'state':'good'})
@@ -140,10 +143,11 @@ def deliver(taskid):
 def getdeliveries(partid):
     fieldnames=['taskid', 'state']
     delifile= open("uploads/"+str(partid)+"/deliverd.txt", 'r')
-    tasks=csv.DictReader(delifile, fields)
+    tasks=csv.DictReader(delifile, fieldnames)
     taskspart=[]
     for row in tasks:
         taskspart.append(row)
+    delifile.close()
     return jsonify({"taskspart":taskspart})
 
 

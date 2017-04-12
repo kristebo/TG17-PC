@@ -133,7 +133,7 @@ def deliver(taskid):
         with open("uploads/"+content['partid']+"/deliverd.txt", 'a+') as file:
             file.write(str(taskid)+",0\n")
 
-    with open("uploads/"+content['partid']+"/"+str(taskid), 'w') as file:
+    with open("uploads/"+content['partid']+"/"+str(taskid)+content['lang'], 'w') as file:
         file.write(content['solution'])
 
     return jsonify({'state':'good'})

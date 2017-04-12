@@ -3,11 +3,27 @@
   "title": "Fibonacci",
   "points": 150,
   "taskTeaser": "This is a world. Calculate it!",
-  "taskText": "Fibonaccitallrekke er definert som summen av de to foregående.  Skriv et programm som lager de 100 første tallene.<br /><b> input </b><br /> Du skal ikke ha noe input til programmet.<br /><b> output </b><br />de 100 første tallene i fibonacci-rekka.",
+  "taskText": "Fibonaccitallrekke er definert som summen av de to foregående.  Skriv et programm som skriver ut det nte(0<n<300) fibonaccitallet .<br /><b> input </b><br /> Et eneste tall som sier plassnummeret i fibonaccirekka.<br /><b> output </b><br />det nte tallet.",
+  "input": [
+    {
+      "name": "en tall som sier hvilket fibonaccitall vi skal ha",
+      "type": "int"
+    }
+  ]
   "output": [
     {
       "name": "de første 100 tallene i fibonacci-rekka",
       "type": "int"
+    }
+  ],
+  "examples": [
+    {
+      "input": "3",
+      "output": "2"
+    },
+    {
+      "input": "99",
+      "output": "218922995834555169026"
     }
   ]
 }

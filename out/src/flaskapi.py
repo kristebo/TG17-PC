@@ -2,7 +2,11 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, json, jsonify, Response, request, abort
 from functools import wraps
-import os
+from datetime import datetime
+from tempfile import mkstemp
+from shutil import move
+from os import close, remove
+import os, time
 
 import csv, codecs
 app = Flask(__name__)
@@ -129,12 +133,36 @@ def deliver(taskid):
         with open("uploads/participants.txt", 'a') as file:
             file.write(content['partid']+","+content['partname']+",0\n")
 
-    if not os.path.exists("uploads/"+content['partid']+"/"+str(taskid)):
+    if not os.path.exists("uploads/"+content['partid']+"/"+str(taskid)+content['lang']):
         with open("uploads/"+content['partid']+"/deliverd.txt", 'a+') as file:
             file.write(str(taskid)+",0\n")
-
+    
+    if os.path.exists("uploads/"+content['partid']+"/"+str(taskid)+content['lang']):
+        with open("uploads/"+content['partid']+"/log", 'a+') as file:
+            file.write(str(taskid)+"-"+datetime.fromtimestamp(time.time()).strftime('%Y%m%d%H%M%S')+"\n")
     with open("uploads/"+content['partid']+"/"+str(taskid)+content['lang'], 'w') as file:
         file.write(content['solution'])
+
+    statuses = []
+    with open("uploads/"+content['partid']+"/deliverd.txt", 'r') as file:
+        statuses = file.readlines()
+
+    for i, j in enumerate(statuses):
+        if str(taskid)+"," in j:
+            statuses[i] = str(taskid)+",0\n"
+            for k in statuses:
+                print "uhm: %s" % k
+
+    fh, abs_path = mkstemp()
+    with open(abs_path,'w') as new_file:
+        for i in statuses:
+            new_file.write("%s" % i);
+
+    close(fh)
+    #Remove original file
+    remove("uploads/"+content['partid']+"/deliverd.txt")
+    #Move new file
+    move(abs_path, "uploads/"+content['partid']+"/deliverd.txt")
 
     return jsonify({'state':'good'})
 

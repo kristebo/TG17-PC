@@ -1,3 +1,34 @@
-12,adr0
-122,22adr0
-557,test0
+1449,Post-elektroniske diskodrops med OST,330
+1452,zar1,0
+1518,ITR,10
+1521,GeeksByNature,60
+1533,How did I get here?,10
+1551,Gnien,10
+1545,PjaVeVe,180
+1455,jishnu,0
+1584,or_akel,280
+1698,Lure Algoritmer Ruler Skipet,0
+1848,SteinTokvam,0
+1845,The Mighty Millhouse Manastorm,10
+1611,Breslfetzn,290
+1863,The Hornzipfel,0
+1653,Badlybad Games,0
+1458,adriah,0
+2088,hufsa,0
+2070,Two's a crowd,270
+557,test,0
+2004,Hei,0
+2109,Foam,0
+1482,topkek,0
+2127,kfh,0
+2112,BIT,0
+1938,K,0
+2166,Team Tuillhus,0
+2010,opc,0
+2274,<script>alert(lol)</script>,0
+2268,NULL,0
+2181,Kamikaze3,0
+2544,Me, Myself and I,0
+2586,$teamname,0
+2622,Team Petter,0
+2286,The Useless,0

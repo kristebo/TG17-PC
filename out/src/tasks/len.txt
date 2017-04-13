@@ -1,9 +1,9 @@
 {
-  "id":"2",
+  "_id":"2",
   "title": "LEN",
   "points": "10",
   "taskTeaser": "Morsomme ord",
-  "taskText": "Finn den det lengste ordet i en ordliste, ekskluder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.<br /><b> input </b><br /> en liste med norske ord.<br /> her er <a href=tomcat.mrow.me/tgpc/api/ord>ordlisten</a><br /><b> output </b><br />lengden på det lengste ordet.",
+  "taskText": "Finn den det lengste ordet i en ordliste, ekskluder der ord er to ord på samme linje, men hvis et av ordene på linja er lengst gjelder denne lengden.<br /><b> input </b><br /> en liste med norske ord.<br /> her er <a href=http://adriah.at.ifi.uio.no/ord.txt>ordlisten</a><br /><b> output </b><br />lengden på det lengste ordet.",
   "input": [
     {
       "name": "ordliste",
